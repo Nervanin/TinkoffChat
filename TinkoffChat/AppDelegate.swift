@@ -9,51 +9,47 @@
 import UIKit
 import CoreData
 
+var logOn: Bool = true //false
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let logOn = true //false
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        applicationMoved(from: "Not running", to: "Not running")
+        return true
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         applicationMoved(from: "Not running", to: "Inactive")
-       // print("Aplication moved from \"Not running\" to \"Inactive\":", #function)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
         applicationMoved(from: "Active", to: "Inactive")
-       // print("Aplication moved from \"Active\" to \"Inactive\":", #function)
-        //print(#function)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         applicationMoved(from: "Inactive", to: "Background")
-        //print("Aplication moved from \"Inactive\" to \"Background\":", #function)
-      //  print(#function)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         applicationMoved(from: "Background", to: "Inactive")
-        //print("Aplication moved from \"Background\" to \"Inactive\":", #function)
-       // print(#function)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         applicationMoved(from: "Inactive", to: "Active")
-       // print("Aplication moved from \"Inactive\" to \"Active\":", #function)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         applicationMoved(from: "Background", to: "Suspended")
-       // print("Aplication moved from \"Background\" to \"Suspended\":", #function)
         self.saveContext()
-       // print(#function)
     }
     
-    func applicationMoved(from: String, to: String, seceltorFunction: String = #function) {
+    func applicationMoved(from: String, to: String, selectorFunction: String = #function) {
         if logOn {
-        print("Application moved from \(from) to \(to):", seceltorFunction)
+        print("Application moved from <\(from)> to <\(to)>:", selectorFunction)
         }
     }
 

@@ -37,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5B10B842210167600CB3F0E /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B5D93B97220B6EC700B12EA4 /* Main.storyboard */,
+				B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
 		B5D93B87220B6EC700B12EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +67,8 @@
 			children = (
 				B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */,
 				B5D93B95220B6EC700B12EA4 /* ViewController.swift */,
-				B5D93B97220B6EC700B12EA4 /* Main.storyboard */,
+				B5B10B842210167600CB3F0E /* scenes */,
 				B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */,
-				B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */,
 				B5D93BA2220B6EC700B12EA4 /* Info.plist */,
 				B5D93B9A220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld */,
 			);
@@ -223,6 +231,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = ON;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
