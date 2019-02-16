@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-var logOn: Bool = true //false
+var logOn: Bool = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
