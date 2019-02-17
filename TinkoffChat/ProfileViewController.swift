@@ -10,13 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var iconOfSetImageButton: UIImageView!
-    @IBOutlet weak var setImageButton: UIButton!
+    var userProfile = UserProfile()
+    @IBOutlet weak var setProfileImageButton: UIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userDescription: UILabel!
     @IBOutlet weak var editingButton: UIButton!
-    var defaultUserImage: String?
     lazy var imagePicker = UIImagePickerController()
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
@@ -24,17 +23,26 @@ class ProfileViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         print(editingButton?.frame ?? "nil")
+        /*
+            Мы получим "nil", потому что в методе init ещё не существует UI элементов,
+            соответственно и frame UI элементов так же не существует)
+         */
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(editingButton?.frame ?? "nil")
         
+        userImage.image = UIImage(named: userProfile.image)
         userImage.layer.cornerRadius = userImage.bounds.height / 6
         userImage.clipsToBounds = true
         
-        setImageButton.backgroundColor = #colorLiteral(red: 0.3076745272, green: 0.5609909296, blue: 0.9542145133, alpha: 1)
-        setImageButton.layer.cornerRadius = userImage.layer.cornerRadius
+        userName.text = userProfile.name
+        
+        userDescription.text = userProfile.discription
+        
+        setProfileImageButton.backgroundColor = #colorLiteral(red: 0.3076745272, green: 0.5609909296, blue: 0.9542145133, alpha: 1)
+        setProfileImageButton.layer.cornerRadius = userImage.layer.cornerRadius
         
         editingButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         editingButton.layer.cornerRadius = 15
@@ -67,6 +75,7 @@ extension ProfileViewController: UITableViewDelegate, UINavigationControllerDele
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
     @IBAction func setImagePressed(_ sender: Any) {
         print("Выбери изображение профиля")
         chooseSourceForImageAlert()
@@ -103,12 +112,10 @@ extension ProfileViewController: UITableViewDelegate, UINavigationControllerDele
 extension ProfileViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
     }
     
     func setGestureRecognizer() {
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageOneTapped(tapGestureRecognizer:)))
         let longGesureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(imageLongPressed(tapGestureRecognizer:)))
         userImage.isUserInteractionEnabled = true
@@ -120,7 +127,6 @@ extension ProfileViewController: UIGestureRecognizerDelegate {
     
     @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
         chooseSourceForImageAlert()
-        print("long")
     }
     
     @objc func imageOneTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -129,7 +135,6 @@ extension ProfileViewController: UIGestureRecognizerDelegate {
             zoomUserImageViewController.userImage.image = self.userImage.image
             present(zoomUserImageViewController, animated: true, completion: nil)
         }
-        print("uno")
-        
     }
+    
 }

@@ -23,7 +23,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
@@ -125,7 +125,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
         }
     }
     
-    @ objc func hadleSingleTap(recognizer: UITapGestureRecognizer) {
+    @objc func hadleSingleTap(recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
     @objc func handleDoubleTap(recognizer: UITapGestureRecognizer) {
