@@ -46,7 +46,11 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
         view.addSubview(scrollView)
         
         setGestureRecognizer()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
         // SnapKit library for set constraints
         scrollView.snp.makeConstraints { (make) in
             

@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var userProfile = UserProfile()
+    var userProfile = UserProfileModel()
     @IBOutlet weak var setProfileImageButton: UIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -20,15 +20,23 @@ class ProfileViewController: UIViewController {
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         print(editingButton?.frame ?? "nil")
         /*
-            Мы получим "nil", потому что в методе init ещё не существует UI элементов,
-            соответственно и frame UI элементов так же не существует)
+         Мы получим "nil", потому что в методе init ещё не существует UI элементов,
+         соответственно и frame UI элементов так же не существует)
          */
+        
+        
     }
     
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(editingButton?.frame ?? "nil")
@@ -41,7 +49,7 @@ class ProfileViewController: UIViewController {
         
         userDescription.text = userProfile.discription
         
-        setProfileImageButton.backgroundColor = #colorLiteral(red: 0.3076745272, green: 0.5609909296, blue: 0.9542145133, alpha: 1)
+        setProfileImageButton.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.4705882353, blue: 0.9411764706, alpha: 1)
         setProfileImageButton.layer.cornerRadius = userImage.layer.cornerRadius
         
         editingButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -72,11 +80,15 @@ class ProfileViewController: UIViewController {
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.delegate = self
     }
+    @IBAction func editingUserProfile(_ sender: Any) {
+        let editingUserOrifileViewController = EditingUserProfileViewController()
+        present(editingUserOrifileViewController, animated: true, completion: nil)
+    }
     
 }
 
 // MARK: Logic for set user image
-//  Here we can set user photo in the profile
+// Here we can set user photo in the profile
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func chooseImagePickerAction(source: UIImagePickerController.SourceType) {

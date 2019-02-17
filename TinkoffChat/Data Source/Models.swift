@@ -8,8 +8,8 @@
 
 import Foundation
 
-class UserProfile {
+class UserProfileModel {
     var image: String = "placeholder-user"
     var name: String = "Мелешко Константин"
-    var discription: String = "👨‍💻 Пытаюсь кодить под ios                       👨‍🎓 Учусь в Тинькофф ФинТех                  👨‍🏫 Помогаю развиваться другим"
+    var discription: String = "👨‍💻 Пытаюсь кодить под ios                                                                     👨‍🎓 Учусь в Тинькофф ФинТех                                                                                          👨‍🏫 Помогаю развиваться другим"
 }
