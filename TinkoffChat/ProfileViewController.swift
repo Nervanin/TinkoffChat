@@ -65,7 +65,8 @@ class ProfileViewController: UIViewController {
     
 }
 
-extension ProfileViewController: UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+//Here we can set user photo in the profile
+extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func chouseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
@@ -109,6 +110,7 @@ extension ProfileViewController: UITableViewDelegate, UINavigationControllerDele
     
 }
 
+// extention for user image. Here add TapGesture for user image
 extension ProfileViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {

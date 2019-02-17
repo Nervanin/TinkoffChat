@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+// i like write user interface in code) here used this way
 class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -32,20 +33,21 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
         
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        userImage.backgroundColor = UIColor(white: 0.2, alpha: 0.2)
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 3
         scrollView.zoomScale = 1
         
-        setGestureRecognizer()
-        
+        userImage.backgroundColor = UIColor(white: 0.2, alpha: 0.2)
         userImage.contentMode = .scaleAspectFit
         userImage.clipsToBounds = true
         
         scrollView.addSubview(userImage)
         view.addSubview(scrollView)
         
+        setGestureRecognizer()
+        
+        // SnapKit library for set constraints
         scrollView.snp.makeConstraints { (make) in
             
             make.top.lessThanOrEqualTo(view)
@@ -70,6 +72,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === doubleTapGestureRecognizer
     }
     
+    // set tap gesture on one, two and swipe taps.
     func setGestureRecognizer() {
         singleTapGestureRecognizer.addTarget(self, action: #selector(ZoomUserImageViewController.hadleSingleTap(recognizer:)))
         doubleTapGestureRecognizer.addTarget(self, action: #selector(ZoomUserImageViewController.handleDoubleTap(recognizer:)))
@@ -92,6 +95,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
         doubleTapGestureRecognizer.delegate = self
     }
     
+    // return to ProfileViewController via swipe image
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
