@@ -55,13 +55,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B5B10B842210167600CB3F0E /* scenes */ = {
+		B583A1622219804D00C18085 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				B583A1602219784F00C18085 /* Models.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		B5B10B842210167600CB3F0E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				B5D93B97220B6EC700B12EA4 /* Main.storyboard */,
 				B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */,
 			);
-			path = scenes;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		B5D93B87220B6EC700B12EA4 = {
@@ -86,10 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */,
-				B583A1602219784F00C18085 /* Models.swift */,
 				B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */,
 				B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */,
-				B5B10B842210167600CB3F0E /* scenes */,
+				B583A1622219804D00C18085 /* Data Source */,
+				B5B10B842210167600CB3F0E /* Scenes */,
 				B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */,
 				B5D93BA2220B6EC700B12EA4 /* Info.plist */,
 				B5D93B9A220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld */,

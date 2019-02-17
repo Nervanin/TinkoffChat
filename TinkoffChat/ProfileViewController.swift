@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
         editingButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         editingButton.clipsToBounds = true
         
-        setGestureRecognizer()
+        setUpGestureRecognizer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,12 +63,23 @@ class ProfileViewController: UIViewController {
          */
     }
     
+    func setUpGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageOneTapped(tapGestureRecognizer:)))
+        let longGesureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(imageLongPressed(tapGestureRecognizer:)))
+        userImage.isUserInteractionEnabled = true
+        userImage.addGestureRecognizer(tapGestureRecognizer)
+        userImage.addGestureRecognizer(longGesureRecognizer)
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.delegate = self
+    }
+    
 }
 
-//Here we can set user photo in the profile
+// MARK: Logic for set user image
+//  Here we can set user photo in the profile
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    func chouseImagePickerAction(source: UIImagePickerController.SourceType) {
+    func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
@@ -85,10 +96,10 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     func chooseSourceForImageAlert() {
         let alertController = UIAlertController(title: "Источник фотографии", message: nil, preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Камера", style: .default) { (action) in
-            self.chouseImagePickerAction(source: .camera)
+            self.chooseImagePickerAction(source: .camera)
         }
         let photoLibriaryAction = UIAlertAction(title: "Фото из библиотеки", style: .default) { (action) in
-            self.chouseImagePickerAction(source: .photoLibrary)
+            self.chooseImagePickerAction(source: .photoLibrary)
         }
         let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { (action) in
             self.userImage.image = UIImage(named: "placeholder-user")
@@ -110,21 +121,12 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     
 }
 
+// MARK: Logic for tap and long press on user image
 // extention for user image. Here add TapGesture for user image
 extension ProfileViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
-    }
-    
-    func setGestureRecognizer() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageOneTapped(tapGestureRecognizer:)))
-        let longGesureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(imageLongPressed(tapGestureRecognizer:)))
-        userImage.isUserInteractionEnabled = true
-        userImage.addGestureRecognizer(tapGestureRecognizer)
-        userImage.addGestureRecognizer(longGesureRecognizer)
-        singleTapGestureRecognizer.numberOfTapsRequired = 1
-        singleTapGestureRecognizer.delegate = self
     }
     
     @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {

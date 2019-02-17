@@ -12,13 +12,4 @@ class UserProfile {
     var image: String = "placeholder-user"
     var name: String = "Мелешко Константин"
     var discription: String = "👨‍💻 Пытаюсь кодить под ios                       👨‍🎓 Учусь в Тинькофф ФинТех                  👨‍🏫 Помогаю развиваться другим"
-//    init(image: String) {
-//        self.image = image
-//    }
-//    init(name: String) {
-//        self.name = name
-//    }
-//    init(discription: String) {
-//        self.discription = discription
-//    }
 }
