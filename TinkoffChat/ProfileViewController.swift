@@ -32,11 +32,12 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print(editingButton?.frame ?? "nil")
         userImage.layer.cornerRadius = userImage.bounds.height / 6
         userImage.clipsToBounds = true
         
-        //userProfileModel.image = UIImage(named: "placeholder-user")!
+        userImage.image = UIImage(named: "placeholder-user")
         setProfileImageButton.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.4705882353, blue: 0.9411764706, alpha: 1)
         setProfileImageButton.layer.cornerRadius = userImage.layer.cornerRadius
         
@@ -51,7 +52,9 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        userImage.image = editingUserProfileViewController.userProfileModel.image
+        if editingUserProfileViewController.userProfileModel.image != UIImage(named: "placeholder-user"){
+            userImage.image = editingUserProfileViewController.userProfileModel.image
+        }
         userName.text = editingUserProfileViewController.userProfileModel.name
         userDescription.text = editingUserProfileViewController.userProfileModel.discription
         

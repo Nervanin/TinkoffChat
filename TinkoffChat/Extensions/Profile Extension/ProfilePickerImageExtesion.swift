@@ -11,7 +11,7 @@ import UIKit
 // MARK: Logic for set user image
 // Here we can set user photo in the profile
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+  
     func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             imagePicker.delegate = self

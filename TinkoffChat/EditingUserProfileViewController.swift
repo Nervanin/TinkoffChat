@@ -218,6 +218,7 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
         super.viewWillDisappear(true)
         cancelButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cancelButton.setTitleColor(.black, for: .normal)
+        userImage.image = UIImage(named: "placeholder-user")
         
     }
     
