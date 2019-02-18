@@ -20,23 +20,15 @@ class ProfileViewController: UIViewController {
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
     
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         print(editingButton?.frame ?? "nil")
         /*
          Мы получим "nil", потому что в методе init ещё не существует UI элементов,
          соответственно и frame UI элементов так же не существует)
          */
-        
-        
     }
     
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(editingButton?.frame ?? "nil")
@@ -52,7 +44,6 @@ class ProfileViewController: UIViewController {
         setProfileImageButton.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.4705882353, blue: 0.9411764706, alpha: 1)
         setProfileImageButton.layer.cornerRadius = userImage.layer.cornerRadius
         
-        editingButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         editingButton.layer.cornerRadius = 15
         editingButton.layer.borderWidth = 1
         editingButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -61,7 +52,17 @@ class ProfileViewController: UIViewController {
         setUpGestureRecognizer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        editingButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        editingButton.setTitle("Редактировать", for: .normal)
+        editingButton.setTitleColor(.black, for: .normal)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
         print(self.editingButton?.frame ?? "nil")
         /*
          Размеры фреймов кнопки "редактировать" в методах viewDidLoad и viewDidAppear отличаются потому что верстка в сториборде
@@ -81,23 +82,10 @@ class ProfileViewController: UIViewController {
         singleTapGestureRecognizer.delegate = self
     }
     @IBAction func editingUserProfile(_ sender: Any) {
+        editingButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        editingButton.setTitleColor(.white, for: .normal)
         let editingUserOrifileViewController = EditingUserProfileViewController()
         present(editingUserOrifileViewController, animated: true, completion: nil)
-    }
-    
-}
-
-// MARK: Logic for set user image
-// Here we can set user photo in the profile
-extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
-        if UIImagePickerController.isSourceTypeAvailable(source) {
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            imagePicker.sourceType = source
-            self.present(imagePicker, animated: true, completion: nil)
-        }
     }
     
     @IBAction func setImagePressed(_ sender: Any) {
@@ -105,52 +93,5 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         chooseSourceForImageAlert()
     }
     
-    func chooseSourceForImageAlert() {
-        let alertController = UIAlertController(title: "Источник фотографии", message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Камера", style: .default) { (action) in
-            self.chooseImagePickerAction(source: .camera)
-        }
-        let photoLibriaryAction = UIAlertAction(title: "Фото из библиотеки", style: .default) { (action) in
-            self.chooseImagePickerAction(source: .photoLibrary)
-        }
-        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { (action) in
-            self.userImage.image = UIImage(named: "placeholder-user")
-        }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        alertController.addAction(cameraAction)
-        alertController.addAction(photoLibriaryAction)
-        if userImage.image != UIImage(named: "placeholder-user") {
-            alertController.addAction(deleteAction)
-        }
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imagePicker.dismiss(animated: true, completion: nil)
-        userImage.image = info[.editedImage] as? UIImage
-    }
-    
 }
 
-// MARK: Logic for tap and long press on user image
-// extention for user image. Here add TapGesture for user image
-extension ProfileViewController: UIGestureRecognizerDelegate {
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
-    }
-    
-    @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
-        chooseSourceForImageAlert()
-    }
-    
-    @objc func imageOneTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        if userImage.image != UIImage(named: "placeholder-user") {
-            let zoomUserImageViewController = ZoomUserImageViewController()
-            zoomUserImageViewController.userImage.image = self.userImage.image
-            present(zoomUserImageViewController, animated: true, completion: nil)
-        }
-    }
-    
-}
