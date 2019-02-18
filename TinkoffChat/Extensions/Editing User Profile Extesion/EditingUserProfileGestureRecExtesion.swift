@@ -12,18 +12,19 @@ import UIKit
 // extention for user image. Here add TapGesture for user image
 extension EditingUserProfileViewController: UIGestureRecognizerDelegate {
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    @objc(gestureRecognizer:shouldRequireFailureOfGestureRecognizer:) func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
     }
+    
     
     @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
         chooseSourceForImageAlert()
     }
     
     @objc func imageOneTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        if setUserImage.image != UIImage(named: "placeholder-user") {
+        if userImage.image != UIImage(named: "placeholder-user") {
             let zoomUserImageViewController = ZoomUserImageViewController()
-            zoomUserImageViewController.userImage.image = self.setUserImage.image
+            zoomUserImageViewController.userImage.image = self.userImage.image
             present(zoomUserImageViewController, animated: true, completion: nil)
         }
     }

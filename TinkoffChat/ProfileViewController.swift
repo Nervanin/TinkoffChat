@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, ChooseSourceForImageAlert, GestureRecognizerFunctions{
     
     var userProfile = UserProfileModel()
     @IBOutlet weak var setProfileImageButton: UIButton!
@@ -81,6 +81,7 @@ class ProfileViewController: UIViewController {
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.delegate = self
     }
+    
     @IBAction func editingUserProfile(_ sender: Any) {
         editingButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         editingButton.setTitleColor(.white, for: .normal)

@@ -30,12 +30,12 @@ extension EditingUserProfileViewController: UINavigationControllerDelegate, UIIm
             self.chooseImagePickerAction(source: .photoLibrary)
         }
         let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { (action) in
-            self.setUserImage.image = UIImage(named: "placeholder-user")
+            self.userImage.image = UIImage(named: "placeholder-user")
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         alertController.addAction(cameraAction)
         alertController.addAction(photoLibriaryAction)
-        if setUserImage.image != UIImage(named: "placeholder-user") {
+        if userImage.image != UIImage(named: "placeholder-user") {
             alertController.addAction(deleteAction)
         }
         alertController.addAction(cancelAction)
@@ -44,7 +44,7 @@ extension EditingUserProfileViewController: UINavigationControllerDelegate, UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
-        setUserImage.image = info[.editedImage] as? UIImage
+        userImage.image = info[.editedImage] as? UIImage
     }
     
 }

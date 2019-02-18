@@ -14,6 +14,7 @@
 		B5A81761221A7B5000A05D3B /* ProfileGestureRecExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */; };
 		B5A81764221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81763221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift */; };
 		B5A81766221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81765221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift */; };
+		B5CFCBE8221A8B84005C1134 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFCBE7221A8B84005C1134 /* Protocols.swift */; };
 		B5D93B94220B6EC700B12EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */; };
 		B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */; };
 		B5D93B99220B6EC700B12EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D93B97220B6EC700B12EA4 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGestureRecExtension.swift; sourceTree = "<group>"; };
 		B5A81763221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingUserProfileGestureRecExtesion.swift; sourceTree = "<group>"; };
 		B5A81765221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingUserProfileImagePickerExtension.swift; sourceTree = "<group>"; };
+		B5CFCBE7221A8B84005C1134 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		B5D93B90220B6EC700B12EA4 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				B583A1602219784F00C18085 /* Models.swift */,
+				B5CFCBE7221A8B84005C1134 /* Protocols.swift */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -94,8 +97,8 @@
 		B5A81768221A7CF500A05D3B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B5A81767221A7CCD00A05D3B /* Editing User Profile Extesion */,
 				B5A81762221A7B8200A05D3B /* Profile Extension */,
+				B5A81767221A7CCD00A05D3B /* Editing User Profile Extesion */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */,
 				B5A81766221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift in Sources */,
 				B5ECE57F22182574005AD783 /* ZoomUserImageViewController.swift in Sources */,
+				B5CFCBE8221A8B84005C1134 /* Protocols.swift in Sources */,
 				B5A8175F221A7A9200A05D3B /* ProfilePickerImageExtesion.swift in Sources */,
 				B588A0342219A73700F691A5 /* EditingUserProfileViewController.swift in Sources */,
 				B5D93B94220B6EC700B12EA4 /* AppDelegate.swift in Sources */,

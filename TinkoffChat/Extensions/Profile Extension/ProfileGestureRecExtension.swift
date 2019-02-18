@@ -12,10 +12,10 @@ import UIKit
 // extention for user image. Here add TapGesture for user image
 extension ProfileViewController: UIGestureRecognizerDelegate {
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
     }
-    
+
     @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
         chooseSourceForImageAlert()
     }
@@ -29,4 +29,3 @@ extension ProfileViewController: UIGestureRecognizerDelegate {
     }
     
 }
-

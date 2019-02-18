@@ -9,10 +9,10 @@
 import UIKit
 import SnapKit
 
-class EditingUserProfileViewController: UIViewController {
+class EditingUserProfileViewController: UIViewController, ChooseSourceForImageAlert, GestureRecognizerFunctions {
     
     var userProfileModel = UserProfileModel()
-    var setUserImage = UIImageView()
+    var userImage: UIImageView!
     var setUserName = UITextField()
     var setUserDescription = UITextField()
     var cancelButton = UIButton(type: .custom)
@@ -27,19 +27,19 @@ class EditingUserProfileViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        view.addSubview(setUserImage)
+        userImage = UIImageView()
+        view.addSubview(userImage)
         view.addSubview(setUserName)
         view.addSubview(setUserDescription)
         view.addSubview(saveButton)
         view.addSubview(cancelButton)
-        setUserImage.addSubview(setUserProfileImageButton)
+        userImage.addSubview(setUserProfileImageButton)
         setUserProfileImageButton.addSubview(iconOfSetProfileImage)
         
-        setUserImage.image = UIImage(named: userProfileModel.image)
-        setUserImage.layer.cornerRadius = 48
-        setUserImage.clipsToBounds = true
-        setUserImage.contentMode = .scaleToFill
+        userImage.image = UIImage(named: userProfileModel.image)
+        userImage.layer.cornerRadius = 48
+        userImage.clipsToBounds = true
+        userImage.contentMode = .scaleToFill
         
         setUserName.delegate = self as? UITextFieldDelegate
         setUserName.placeholder = "Введите Ваше имя"
@@ -66,7 +66,7 @@ class EditingUserProfileViewController: UIViewController {
         cancelButton.layer.cornerRadius = 10
         
         setUserProfileImageButton.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.4705882353, blue: 0.9411764706, alpha: 1)
-        setUserProfileImageButton.layer.cornerRadius = setUserImage.layer.cornerRadius
+        setUserProfileImageButton.layer.cornerRadius = userImage.layer.cornerRadius
         setUserProfileImageButton.addTarget(nil, action: #selector(setUserProfileImagePressed(_:)), for: .touchUpInside)
         
         iconOfSetProfileImage.image = UIImage(named: "slr-camera-2-xxl")
@@ -83,10 +83,10 @@ class EditingUserProfileViewController: UIViewController {
         super.viewWillAppear(false)
         
         //aspectRatio for userImagePlaceholder
-        let aspectRatioConstraint = NSLayoutConstraint(item: setUserImage,attribute: .height,relatedBy: .equal,toItem: setUserImage,attribute: .width,multiplier: (1),constant: 0)
-        setUserImage.addConstraint(aspectRatioConstraint)
+        let aspectRatioConstraint = NSLayoutConstraint(item: userImage,attribute: .height,relatedBy: .equal,toItem: userImage,attribute: .width,multiplier: (1),constant: 0)
+        userImage.addConstraint(aspectRatioConstraint)
         
-        setUserImage.translatesAutoresizingMaskIntoConstraints = false
+        userImage.translatesAutoresizingMaskIntoConstraints = false
         setUserName.translatesAutoresizingMaskIntoConstraints = false
         setUserDescription.translatesAutoresizingMaskIntoConstraints = false
         saveButton.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +102,7 @@ class EditingUserProfileViewController: UIViewController {
         setUserDescription.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .horizontal)
         setUserDescription.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical)
         
-        setUserImage.snp.makeConstraints { (make) in
+        userImage.snp.makeConstraints { (make) in
             
             make.top.equalTo(view).offset(30)
             make.left.equalTo(view).offset(16)
@@ -111,7 +111,7 @@ class EditingUserProfileViewController: UIViewController {
         
         setUserName.snp.makeConstraints { (make) in
             
-            make.top.equalTo(setUserImage.snp.bottom).offset(8)
+            make.top.equalTo(userImage.snp.bottom).offset(8)
             make.left.equalTo(view).offset(16)
             make.right.equalTo(view).offset(-16)
             make.bottom.equalTo(setUserDescription.snp.top).offset(-8)
@@ -145,8 +145,8 @@ class EditingUserProfileViewController: UIViewController {
         
         setUserProfileImageButton.snp.makeConstraints { (make) in
             
-            make.bottom.equalTo(setUserImage).offset(0)
-            make.right.equalTo(setUserImage).offset(0)
+            make.bottom.equalTo(userImage).offset(0)
+            make.right.equalTo(userImage).offset(0)
             make.width.greaterThanOrEqualTo(101)
             make.height.greaterThanOrEqualTo(101)
         }
@@ -164,9 +164,9 @@ class EditingUserProfileViewController: UIViewController {
     func setUpGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageOneTapped(tapGestureRecognizer:)))
         let longGesureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(imageLongPressed(tapGestureRecognizer:)))
-        setUserImage.isUserInteractionEnabled = true
-        setUserImage.addGestureRecognizer(tapGestureRecognizer)
-        setUserImage.addGestureRecognizer(longGesureRecognizer)
+        userImage.isUserInteractionEnabled = true
+        userImage.addGestureRecognizer(tapGestureRecognizer)
+        userImage.addGestureRecognizer(longGesureRecognizer)
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.delegate = self
     }
