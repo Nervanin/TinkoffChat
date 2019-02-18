@@ -9,10 +9,12 @@
 import UIKit
 import SnapKit
 
-class EditingUserProfileViewController: UIViewController, ChooseSourceForImageAlert, GestureRecognizerFunctions {
+class EditingUserProfileViewController: UIViewController, SetUserProfileImageProtocol, GestureRecognizerLogicForUserProfileImage {
     
+    let profileViewController = ProfileViewController()
     var userProfileModel = UserProfileModel()
     var userImage: UIImageView!
+    var imageName = String()
     var setUserName = UITextField()
     var setUserDescription = UITextField()
     var cancelButton = UIButton(type: .custom)
@@ -36,7 +38,7 @@ class EditingUserProfileViewController: UIViewController, ChooseSourceForImageAl
         userImage.addSubview(setUserProfileImageButton)
         setUserProfileImageButton.addSubview(iconOfSetProfileImage)
         
-        userImage.image = UIImage(named: userProfileModel.image)
+        userImage.image = UIImage(named: imageName)
         userImage.layer.cornerRadius = 48
         userImage.clipsToBounds = true
         userImage.contentMode = .scaleToFill
@@ -47,6 +49,7 @@ class EditingUserProfileViewController: UIViewController, ChooseSourceForImageAl
         setUserName.layer.borderWidth = 0.5
         setUserName.layer.cornerRadius = 10
         setUserName.font = UIFont.boldSystemFont(ofSize: 27.0)
+        setUserName.text = "123"
         
         setUserDescription.placeholder = "Расскажите о себе"
         setUserDescription.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -72,6 +75,8 @@ class EditingUserProfileViewController: UIViewController, ChooseSourceForImageAl
         iconOfSetProfileImage.image = UIImage(named: "slr-camera-2-xxl")
         
         cancelButton.addTarget(nil, action: #selector(cancelToProfile), for: .touchUpInside)
+        
+        saveButton.addTarget(nil, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         //actions for show and hide keyboard then user set info
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -170,6 +175,15 @@ class EditingUserProfileViewController: UIViewController, ChooseSourceForImageAl
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.delegate = self
     }
+    
+    //MARK: settings
+    @objc func saveButtonPressed(_ sender: UIButton) {
+        if sender == saveButton {
+            userProfileModel.name = setUserName.text ?? userProfileModel.name
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     //MARK: settings action of cancel button
     @objc func cancelToProfile(_ sender: UIButton) {
         if sender == cancelButton {

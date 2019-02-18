@@ -136,6 +136,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
     @objc func hadleSingleTap(recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
+    
     @objc func handleDoubleTap(recognizer: UITapGestureRecognizer) {
         if (scrollView.zoomScale > scrollView.minimumZoomScale) {
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
@@ -143,6 +144,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
             scrollView.setZoomScale(scrollView.maximumZoomScale, animated: true)
         }
     }
+    
     @objc func hadlePinch(sender: UIPinchGestureRecognizer) {
         guard sender.view != nil else {
             return

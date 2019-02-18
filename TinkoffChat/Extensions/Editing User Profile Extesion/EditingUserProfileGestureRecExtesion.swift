@@ -12,7 +12,7 @@ import UIKit
 // extention for user image. Here add TapGesture for user image
 extension EditingUserProfileViewController: UIGestureRecognizerDelegate {
     
-    @objc(gestureRecognizer:shouldRequireFailureOfGestureRecognizer:) func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
     }
     

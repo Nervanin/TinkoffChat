@@ -6,12 +6,12 @@
 //  Copyright © 2019 Konstantin Meleshko. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 
 // MAKR: ChooseSourceForImageAlert protocol
 // protocol for extension Profile and EditingUserProfile VC. via him we cah shoose image by photo libriarry or camera
-protocol ChooseSourceForImageAlert  {
+protocol SetUserProfileImageProtocol  {
     var userImage: UIImageView! { get set }
     var imagePicker: UIImagePickerController { get set }
     func chooseSourceForImageAlert()
@@ -20,7 +20,7 @@ protocol ChooseSourceForImageAlert  {
     func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Swift.Void)?)
 }
 
-extension ChooseSourceForImageAlert {
+extension SetUserProfileImageProtocol {
     func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
@@ -55,39 +55,4 @@ extension ChooseSourceForImageAlert {
         imagePicker.dismiss(animated: true, completion: nil)
         userImage.image = info[.editedImage] as? UIImage
     }
-}
-
-// MAKR: gestureRecognizerFunctions protocol
-//protocol for extension Profile and EditingUserProfile VC. via him we cah choose image by photo libriarry or camera by long press on image or we can Zoom image by one tap
- protocol GestureRecognizerFunctions {
-    var userImage: UIImageView! { get set }
-    var imagePicker: UIImagePickerController { get set }
-    var singleTapGestureRecognizer: UITapGestureRecognizer { get set }
-    var longPressGestureRecognizer: UILongPressGestureRecognizer { get set }
-    func setUpGestureRecognizer()
-    func chooseSourceForImageAlert()
-    func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer)
-    func imageOneTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool
-     func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Swift.Void)?)
-}
-
-
-extension GestureRecognizerFunctions {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
-    }
-    
-    func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
-        chooseSourceForImageAlert()
-    }
-    
-    func imageOneTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        if userImage.image != UIImage(named: "placeholder-user") {
-            let zoomUserImageViewController = ZoomUserImageViewController()
-            zoomUserImageViewController.userImage.image = self.userImage.image
-            present(zoomUserImageViewController, animated: true, completion: nil)
-        }
-    }
-    
 }

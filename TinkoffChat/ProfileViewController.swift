@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, ChooseSourceForImageAlert, GestureRecognizerFunctions{
+class ProfileViewController: UIViewController, SetUserProfileImageProtocol, GestureRecognizerLogicForUserProfileImage{
     
     var userProfile = UserProfileModel()
     @IBOutlet weak var setProfileImageButton: UIButton!
@@ -19,15 +19,15 @@ class ProfileViewController: UIViewController, ChooseSourceForImageAlert, Gestur
     lazy var imagePicker = UIImagePickerController()
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        print(editingButton?.frame ?? "nil")
-        /*
-         Мы получим "nil", потому что в методе init ещё не существует UI элементов,
-         соответственно и frame UI элементов так же не существует)
-         */
-    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        print(editingButton?.frame ?? "nil")
+//        /*
+//         Мы получим "nil", потому что в методе init ещё не существует UI элементов,
+//         соответственно и frame UI элементов так же не существует)
+//         */
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +86,7 @@ class ProfileViewController: UIViewController, ChooseSourceForImageAlert, Gestur
         editingButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         editingButton.setTitleColor(.white, for: .normal)
         let editingUserOrifileViewController = EditingUserProfileViewController()
+        editingUserOrifileViewController.imageName = userProfile.image
         present(editingUserOrifileViewController, animated: true, completion: nil)
     }
     
