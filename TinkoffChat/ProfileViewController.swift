@@ -51,8 +51,8 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        if editingUserProfileViewController.userProfileModel.image != UIImage(named: "placeholder-user"){
+
+        if editingUserProfileViewController.userProfileModel.image != UIImage(named: "placeholder-user") {
             userImage.image = editingUserProfileViewController.userProfileModel.image
         }
         userName.text = editingUserProfileViewController.userProfileModel.name

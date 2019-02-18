@@ -179,20 +179,10 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
     //MARK: save settings
     @objc func saveButtonPressed(_ sender: UIButton) {
         if sender == saveButton {
-            if setUserName.text == "" {
-                let alertController = UIAlertController(title: "Не все поля заполненны", message: "Введите Ваше имя", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-            } else {
-                userProfileModel.name = setUserName.text ?? userProfileModel.name
-                userProfileModel.discription = setUserDescription.text ?? userProfileModel.discription
-                dismiss(animated: true, completion: nil)
-                if userImage.image != UIImage(named: "placeholder-user") {
-                    userProfileModel.image = userImage.image
-                    dismiss(animated: true, completion: nil)
-                }
-            }
+            let alertController = UIAlertController(title: "ВОУ ВОУ", message: "По причине криворукости разработчика, кнопка временно не работает. Как только научится - так сделает.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -218,7 +208,7 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
         super.viewWillDisappear(true)
         cancelButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cancelButton.setTitleColor(.black, for: .normal)
-        userImage.image = UIImage(named: "placeholder-user")
+        //  userImage.image = UIImage(named: "placeholder-user")
         
     }
     
