@@ -20,7 +20,7 @@ extension EditingUserProfileViewController: UINavigationControllerDelegate, UIIm
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-
+    
     func chooseSourceForImageAlert() {
         let alertController = UIAlertController(title: "Источник фотографии", message: nil, preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Камера", style: .default) { (action) in

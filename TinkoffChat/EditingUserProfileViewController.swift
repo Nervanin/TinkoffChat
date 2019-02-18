@@ -8,10 +8,10 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 class EditingUserProfileViewController: UIViewController, SetUserProfileImageProtocol, GestureRecognizerLogicForUserProfileImage {
     
-    let profileViewController = ProfileViewController()
     var userProfileModel = UserProfileModel()
     var userImage: UIImageView!
     var imageName = String()
@@ -38,7 +38,7 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
         userImage.addSubview(setUserProfileImageButton)
         setUserProfileImageButton.addSubview(iconOfSetProfileImage)
         
-        userImage.image = UIImage(named: imageName)
+        userImage.image = userProfileModel.image
         userImage.layer.cornerRadius = 48
         userImage.clipsToBounds = true
         userImage.contentMode = .scaleToFill
@@ -49,7 +49,6 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
         setUserName.layer.borderWidth = 0.5
         setUserName.layer.cornerRadius = 10
         setUserName.font = UIFont.boldSystemFont(ofSize: 27.0)
-        setUserName.text = "123"
         
         setUserDescription.placeholder = "Расскажите о себе"
         setUserDescription.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -74,10 +73,11 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
         
         iconOfSetProfileImage.image = UIImage(named: "slr-camera-2-xxl")
         
-        cancelButton.addTarget(nil, action: #selector(cancelToProfile), for: .touchUpInside)
-        
+        cancelButton.addTarget(nil, action: #selector(touchUpCancelButton(_:)), for: .touchUpInside)
         saveButton.addTarget(nil, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
-        //actions for show and hide keyboard then user set info
+        saveButton.addTarget(nil, action: #selector(touchSaveButton(_:)), for: .touchDown)
+        saveButton.addTarget(nil, action: #selector(touchUpSaveButton(_:)), for: .touchUpInside)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -176,21 +176,49 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
         singleTapGestureRecognizer.delegate = self
     }
     
-    //MARK: settings
+    //MARK: save settings
     @objc func saveButtonPressed(_ sender: UIButton) {
         if sender == saveButton {
-            userProfileModel.name = setUserName.text ?? userProfileModel.name
-            dismiss(animated: true, completion: nil)
+            if setUserName.text == "" {
+                let alertController = UIAlertController(title: "Не все поля заполненны", message: "Введите Ваше имя", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                userProfileModel.name = setUserName.text ?? userProfileModel.name
+                userProfileModel.discription = setUserDescription.text ?? userProfileModel.discription
+                dismiss(animated: true, completion: nil)
+                if userImage.image != UIImage(named: "placeholder-user") {
+                    userProfileModel.image = userImage.image
+                    dismiss(animated: true, completion: nil)
+                }
+            }
         }
     }
     
+    @objc func touchSaveButton(_ sender: UIButton) {
+        saveButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        saveButton.setTitleColor(.white, for: .normal)
+    }
+    
+    @objc func touchUpSaveButton(_ sender: UIButton) {
+        saveButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        saveButton.setTitleColor(.black, for: .normal)
+    }
+    
     //MARK: settings action of cancel button
-    @objc func cancelToProfile(_ sender: UIButton) {
+    @objc func touchUpCancelButton(_ sender: UIButton) {
         if sender == cancelButton {
             cancelButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             cancelButton.setTitleColor(.white, for: .normal)
             dismiss(animated: true, completion: nil)
         }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        cancelButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cancelButton.setTitleColor(.black, for: .normal)
+        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -200,7 +228,7 @@ class EditingUserProfileViewController: UIViewController, SetUserProfileImagePro
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0

@@ -41,7 +41,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
-   
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         userImage.image = info[.editedImage] as? UIImage

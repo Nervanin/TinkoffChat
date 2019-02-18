@@ -24,7 +24,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
@@ -50,7 +50,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
+        
         // SnapKit library for set constraints
         scrollView.snp.makeConstraints { (make) in
             

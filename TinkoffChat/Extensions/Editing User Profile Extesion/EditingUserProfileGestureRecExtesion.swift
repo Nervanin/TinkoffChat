@@ -16,7 +16,6 @@ extension EditingUserProfileViewController: UIGestureRecognizerDelegate {
         return gestureRecognizer === singleTapGestureRecognizer && otherGestureRecognizer === longPressGestureRecognizer
     }
     
-    
     @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
         chooseSourceForImageAlert()
     }

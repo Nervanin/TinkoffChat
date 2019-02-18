@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, SetUserProfileImageProtocol, GestureRecognizerLogicForUserProfileImage{
+class ProfileViewController: UIViewController, SetUserProfileImageProtocol, GestureRecognizerLogicForUserProfileImage {
     
-    var userProfile = UserProfileModel()
+    lazy var editingUserProfileViewController = EditingUserProfileViewController()
+    var userProfileModel = UserProfileModel()
     @IBOutlet weak var setProfileImageButton: UIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -19,28 +20,23 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     lazy var imagePicker = UIImagePickerController()
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        print(editingButton?.frame ?? "nil")
-//        /*
-//         Мы получим "nil", потому что в методе init ещё не существует UI элементов,
-//         соответственно и frame UI элементов так же не существует)
-//         */
-//    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print(editingButton?.frame ?? "nil")
+        /*
+         Мы получим "nil", потому что в методе init ещё не существует UI элементов,
+         соответственно и frame UI элементов так же не существует)
+         */
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(editingButton?.frame ?? "nil")
-        
-        userImage.image = UIImage(named: userProfile.image)
         userImage.layer.cornerRadius = userImage.bounds.height / 6
         userImage.clipsToBounds = true
         
-        userName.text = userProfile.name
-        
-        userDescription.text = userProfile.discription
-        
+        //userProfileModel.image = UIImage(named: "placeholder-user")!
         setProfileImageButton.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.4705882353, blue: 0.9411764706, alpha: 1)
         setProfileImageButton.layer.cornerRadius = userImage.layer.cornerRadius
         
@@ -54,6 +50,10 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        userImage.image = editingUserProfileViewController.userProfileModel.image
+        userName.text = editingUserProfileViewController.userProfileModel.name
+        userDescription.text = editingUserProfileViewController.userProfileModel.discription
         
         editingButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         editingButton.setTitle("Редактировать", for: .normal)
@@ -85,9 +85,7 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     @IBAction func editingUserProfile(_ sender: Any) {
         editingButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         editingButton.setTitleColor(.white, for: .normal)
-        let editingUserOrifileViewController = EditingUserProfileViewController()
-        editingUserOrifileViewController.imageName = userProfile.image
-        present(editingUserOrifileViewController, animated: true, completion: nil)
+        present(editingUserProfileViewController, animated: true, completion: nil)
     }
     
     @IBAction func setImagePressed(_ sender: Any) {
