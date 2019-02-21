@@ -22,8 +22,6 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
         
         conversationItemsArray = DataSource.parseDataSource()
         navigationItem.title = "Tinkoff Chat"
-        
-        // tableView.register(ConversationTableViewCell.self, forCellReuseIdentifier: "cellId")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

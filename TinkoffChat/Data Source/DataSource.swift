@@ -24,15 +24,12 @@ class DataSource {
         for item in sections! {
             if let id = item["id"] as? Int,
                 let status = item["status"] as? String {
-                let instaceStatusSection = ChatItemsForSection(id: id, status: status)//ConversationTableViewCell(id: id, status: status)
+                let instaceStatusSection = ChatItemsForSection(id: id, status: status)
                 conversationCellItemsDictionarry[instaceStatusSection.id] = instaceStatusSection
             }
         }
         let items = json?["items"] as? [[String: Any]]
         for item in items! {
-//            guard let date = item["date"] as? Date else {
-//                continue
-//            }
             if let identity = item["id"] as? Int,
                 let name = item["name"] as? String,
                 let message = item["message"] as? String,
