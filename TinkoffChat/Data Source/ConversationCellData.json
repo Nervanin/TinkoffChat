@@ -1,0 +1,40 @@
+{
+    "sections": [
+        {
+            "id": 0,
+            "status": "online"
+        },
+        {
+            "id": 1,
+            "status": "offline"
+        }
+    ],
+    "items": [
+        {
+            "id": 0,
+            "name": "Stive Jobs",
+            "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 0,
+            "name": "Ris RIZARsPun",
+            "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Chak Noris",
+            "message": "Hello, how are u?",
+            "online": false,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        }
+    ]
+}
+
+

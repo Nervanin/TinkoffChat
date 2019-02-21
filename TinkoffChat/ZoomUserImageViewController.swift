@@ -46,7 +46,10 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
         view.addSubview(scrollView)
         
         setGestureRecognizer()
+    
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -66,7 +69,7 @@ class ZoomUserImageViewController: UIViewController, UIScrollViewDelegate, UIGes
             make.top.equalTo(scrollView.snp.top)
             make.left.equalTo(scrollView.snp.left)
             make.right.equalTo(scrollView.snp.right)
-            make.height.equalTo(scrollView.snp.height)
+            make.height.equalTo(scrollView.snp.height) //! center y check
             make.width.equalTo(scrollView)
         }
     }
