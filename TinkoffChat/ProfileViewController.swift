@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, SetUserProfileImageProtocol, GestureRecognizerLogicForUserProfileImage {
     
-    let chatViewController = ChatViewController()
+   
     lazy var editingUserProfileViewController = EditingUserProfileViewController()
     var userProfileModel = UserProfileModel()
     @IBOutlet weak var setProfileImageButton: UIButton!

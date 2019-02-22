@@ -10,7 +10,12 @@ import UIKit
 
 class ConversationTableViewCell: UITableViewCell, ConversationCellConfiguration {
     
-    var name: String?
+    @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var userName: UILabel!
+    @IBOutlet var lastUserMessage: UILabel!
+    @IBOutlet var dateOfLatsMessage: UILabel!
+    
+    var name: String? 
     var message: String?
     var date: Date?
     var online: Bool?
@@ -18,6 +23,7 @@ class ConversationTableViewCell: UITableViewCell, ConversationCellConfiguration 
     var userImage: String?
     var status: String?
     var id: Int?
+    
    
     init?(id: Int?, status: String?) {
         super.init(style: .default, reuseIdentifier: nil)
@@ -35,6 +41,10 @@ class ConversationTableViewCell: UITableViewCell, ConversationCellConfiguration 
         self.hasUnreadMessge = hasUnreadMessge
         self.userImage = userImage
     }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+    }
     
     init() {
         super.init(style: .default, reuseIdentifier: nil)
@@ -44,10 +54,6 @@ class ConversationTableViewCell: UITableViewCell, ConversationCellConfiguration 
         super.init(coder: aDecoder)
     }
     
-    @IBOutlet var userImageView: UIImageView!
-    @IBOutlet var userName: UILabel!
-    @IBOutlet var laseUserMessage: UILabel!
-    @IBOutlet var dateOfLatsMessage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

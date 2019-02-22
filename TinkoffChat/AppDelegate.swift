@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         applicationMoved(from: "Not running", to: "Inactive")
+       
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

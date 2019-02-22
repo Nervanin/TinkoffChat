@@ -28,8 +28,8 @@
 		B5D93B9C220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B9A220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld */; };
 		B5D93B9E220B6EC700B12EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */; };
 		B5D93BA1220B6EC700B12EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */; };
-		B5E240A7221DB72700162554 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E240A6221DB72700162554 /* ChatViewController.swift */; };
 		B5ECE57F22182574005AD783 /* ZoomUserImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */; };
+		B5F00289221FB85500F88004 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5F00288221FB85500F88004 /* icon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +56,8 @@
 		B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D93BA0220B6EC700B12EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D93BA2220B6EC700B12EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5E240A6221DB72700162554 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomUserImageViewController.swift; sourceTree = "<group>"; };
+		B5F00288221FB85500F88004 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon.jpg; path = ../../../Downloads/icon.jpg; sourceTree = "<group>"; };
 		D13F12F1225E29503664F6AA /* Pods-TinkoffChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.release.xcconfig"; sourceTree = "<group>"; };
 		E6073FE7680D7434BE1FEFA6 /* Pods_TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,7 +157,6 @@
 				B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */,
 				B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */,
 				B588A0332219A73700F691A5 /* EditingUserProfileViewController.swift */,
-				B5E240A6221DB72700162554 /* ChatViewController.swift */,
 				B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */,
 				B58B3643221DF79B00DDE309 /* ConversationsListViewController.swift */,
 				B57E183D221ED37800BB9233 /* ConversationTableViewCell.swift */,
@@ -165,6 +164,7 @@
 				B583A1622219804D00C18085 /* Data Source */,
 				B5B10B842210167600CB3F0E /* Scenes */,
 				B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */,
+				B5F00288221FB85500F88004 /* icon.jpg */,
 				B5D93BA2220B6EC700B12EA4 /* Info.plist */,
 				B5D93B9A220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld */,
 			);
@@ -243,6 +243,7 @@
 				B5D93B9E220B6EC700B12EA4 /* Assets.xcassets in Resources */,
 				B58B3642221DF66500DDE309 /* ChatList.storyboard in Resources */,
 				B5D93B99220B6EC700B12EA4 /* Main.storyboard in Resources */,
+				B5F00289221FB85500F88004 /* icon.jpg in Resources */,
 				B57E1840221EE86E00BB9233 /* ConversationCellData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +307,6 @@
 				B5A81764221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift in Sources */,
 				B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */,
 				B5D93B9C220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld in Sources */,
-				B5E240A7221DB72700162554 /* ChatViewController.swift in Sources */,
 				B51C3150221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift in Sources */,
 				B5A81761221A7B5000A05D3B /* ProfileGestureRecExtension.swift in Sources */,
 				B583A1612219784F00C18085 /* Models.swift in Sources */,

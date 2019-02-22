@@ -2,11 +2,11 @@
     "sections": [
         {
             "id": 0,
-            "status": "online"
+            "status": "Online"
         },
         {
             "id": 1,
-            "status": "offline"
+            "status": "History"
         }
     ],
     "items": [
@@ -20,20 +20,117 @@
         },
         {
             "id": 0,
-            "name": "Ris RIZARsPun",
+            "name": "Никита",
             "message": "Hello, how are u?",
             "online": true,
             "hasUnreadMessage": false,
             "userImage": "placeholder-user"
         },
         {
-            "id": 1,
-            "name": "Chak Noris",
+            "id": 0,
+            "name": "Олег",
             "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 0,
+            "name": "Стас",
+            "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 0,
+            "name": "Гена",
+            "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 0,
+            "name": "Турбо",
+            "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": true,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 0,
+            "name": "Дюша",
+            "message": "Hello, how are u?",
+            "online": true,
+            "hasUnreadMessage": true,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 0,
+            "name": "Ris RIZARsPun",
+            "message": "123123123",
+            "online": true,
+            "hasUnreadMessage": true,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Chack Noris",
+            "message": "Hello, how are u, its Chack?",
             "online": false,
             "hasUnreadMessage": false,
             "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Stive Bushemi",
+            "message": null,
+            "online": false,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Chack Noris",
+            "message": "Hello, how are u, its Chack?",
+            "online": false,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Стивен Сигал",
+            "message": "Hello, how are u, its Chack?",
+            "online": false,
+            "hasUnreadMessage": false,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Георгий",
+            "message": "Hello, how are u, its Chack?",
+            "online": false,
+            "hasUnreadMessage": true,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Николас",
+            "message": "Hello, how are u, its Chack?",
+            "online": false,
+            "hasUnreadMessage": true,
+            "userImage": "placeholder-user"
+        },
+        {
+            "id": 1,
+            "name": "Павел",
+            "message": null,
+            "online": false,
+            "hasUnreadMessage": true,
+            "userImage": "placeholder-user"
         }
+        
     ]
 }
 

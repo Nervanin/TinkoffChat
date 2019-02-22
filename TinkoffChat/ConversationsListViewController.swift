@@ -10,7 +10,9 @@ import UIKit
 
 class ConversationsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var conversationItemsArray = [ChatItemsForSection]()
+    var conversationItemsArray = [ConversationItemsForSection]()
+    let selfUserProfileImage = UIImage(named: "placeholder-user")
+    let selfUserProfileImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10)) //(image: selfUserProfileImage)
     
     var tableView: UITableView = {
         var tableView = UITableView()
@@ -19,13 +21,26 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //  selfUserProfileImageView.image = selfUserProfileImage
         conversationItemsArray = DataSource.parseDataSource()
-        navigationItem.title = "Tinkoff Chat"
+        //   navigationItem.titleView = selfUserProfileImageView
+        setUpNavigationBarItems()
+        
+    }
+    
+    func setUpNavigationBarItems() {
+        // navigationItem.title = "Tinkoff Chat"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: selfUserProfileImage, style: UIBarButtonItem.Style.done, target: nil, action: nil)
+        //        let button: UIButton = UIButton(type: .custom)
+        //        button.setImage(UIImage(named: "icon"), for: .normal)
+        //        button.frame = CGRect(x: 10, y: 10, width: 6, height: 6)
+        //        let barButton = UIBarButtonItem(customView: button)
+        //        self.navigationItem.rightBarButtonItem = barButton
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2 //
+        return conversationItemsArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,12 +53,23 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
         cell.userName.font = UIFont.boldSystemFont(ofSize: 18.0)
         cell.userImageView?.image = UIImage(named: "placeholder-user")
         cell.userImageView?.layer.cornerRadius = 100
-        cell.laseUserMessage?.text = "Тут последнее сообщение ,которое я хочу протестировать на количество строк"
+        if conversationItemsArray[indexPath.section].items[indexPath.row].message != nil {
+            cell.lastUserMessage.text = conversationItemsArray[indexPath.section].items[indexPath.row].message
+        } else {
+            cell.lastUserMessage.text = "No messages yet"
+        }
+        if conversationItemsArray[indexPath.section].items[indexPath.row].online == false {
+            cell.backgroundColor = #colorLiteral(red: 0.9357749809, green: 0.9764705896, blue: 0.7158226275, alpha: 1)
+        }
+        if conversationItemsArray[indexPath.section].items[indexPath.row].hasUnreadMessge == true {
+            cell.lastUserMessage.font = UIFont.boldSystemFont(ofSize: 22.00)
+        }
+
         cell.dateOfLatsMessage.text = "12.50 pm"
-        
         return cell
-        
     }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0;//Choose your custom row height
