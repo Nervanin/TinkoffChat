@@ -94,12 +94,15 @@
                                 <rect key="frame" x="276" y="5" width="83" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonUserProfilePressed:" destination="wNj-kK-Wq5" eventType="touchUpInside" id="V28-IX-fc5"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="AaV-pn-j1y" id="g1X-sy-JGP"/>
-                        <outlet property="userProfileButton" destination="7FL-e1-rM5" id="1Jp-Gn-T7L"/>
+                        <outlet property="userProfileButton" destination="7FL-e1-rM5" id="bjJ-XV-8kg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5FC-V9-fPu" userLabel="First Responder" sceneMemberID="firstResponder"/>

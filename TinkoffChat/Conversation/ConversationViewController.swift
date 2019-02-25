@@ -13,6 +13,7 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var userProfileButton: UIButton!
     
+    var navigationTitle = String()
     var userImageName = String()
     let comingOutMessageCellId = "ComingOutMessageCellId"
     let outgoingMessageCellId = "OutgoingMessageCellId"
@@ -26,13 +27,14 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
+        navigationItem.title = navigationTitle
         userProfileButton.setImage(UIImage(named: userImageName), for: .normal)
         userProfileButton.widthAnchor.constraint(equalToConstant: 35.0).isActive = true
         userProfileButton.heightAnchor.constraint(equalToConstant: 35.0).isActive = true
         userProfileButton.clipsToBounds = true
         userProfileButton.layer.cornerRadius = userProfileButton.bounds.height / 2
-
+        
         tableView.tableFooterView = UIView()
     }
     
@@ -68,5 +70,14 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
-
+    
+    @IBAction func buttonUserProfilePressed(_ sender: UIButton) {
+        if sender == userProfileButton {
+            let alertController = UIAlertController(title: "ВОУ ВОУ", message: "По причине криворукости разработчика, кнопка временно не работает. Как только научится - так сделает.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
 }

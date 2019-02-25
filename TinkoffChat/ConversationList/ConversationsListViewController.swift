@@ -120,7 +120,7 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
             if let indexPath = tableView.indexPathForSelectedRow {
                 if let destinationViewController = segue.destination as? ConversationViewController {
                     let itemsArray = conversationItemsArray[indexPath.section][indexPath.row]
-                    destinationViewController.navigationItem.title = itemsArray?.name ?? ""
+                    destinationViewController.navigationTitle = itemsArray?.name ?? ""
                     destinationViewController.userImageName = itemsArray?.userImage ?? "placeholder-user"
                 }
             }
