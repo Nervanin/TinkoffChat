@@ -11,6 +11,9 @@ import UIKit
 class ConversationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var userProfileButton: UIButton!
+    
+    var userImageName = String()
     let comingOutMessageCellId = "ComingOutMessageCellId"
     let outgoingMessageCellId = "OutgoingMessageCellId"
     
@@ -23,7 +26,13 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
+        userProfileButton.setImage(UIImage(named: userImageName), for: .normal)
+        userProfileButton.widthAnchor.constraint(equalToConstant: 35.0).isActive = true
+        userProfileButton.heightAnchor.constraint(equalToConstant: 35.0).isActive = true
+        userProfileButton.clipsToBounds = true
+        userProfileButton.layer.cornerRadius = userProfileButton.bounds.height / 2
+
         tableView.tableFooterView = UIView()
     }
     

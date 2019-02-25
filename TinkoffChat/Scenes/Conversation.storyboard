@@ -88,13 +88,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fko-ic-0NU"/>
                     </view>
+                    <navigationItem key="navigationItem" id="egG-Us-MZB">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="RE6-l2-5RH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7FL-e1-rM5">
+                                <rect key="frame" x="276" y="5" width="83" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="AaV-pn-j1y" id="g1X-sy-JGP"/>
+                        <outlet property="userProfileButton" destination="7FL-e1-rM5" id="1Jp-Gn-T7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5FC-V9-fPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="155.625" y="233.75"/>
+            <point key="canvasLocation" x="154.40000000000001" y="233.43328335832086"/>
         </scene>
     </scenes>
 </document>
