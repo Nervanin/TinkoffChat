@@ -22,15 +22,6 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        print(editingButton?.frame ?? "nil")
-        /*
-         Мы получим "nil", потому что в методе init ещё не существует UI элементов,
-         соответственно и frame UI элементов так же не существует)
-         */
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,6 +75,10 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
         userImage.addGestureRecognizer(longGesureRecognizer)
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.delegate = self
+    }
+    
+    @IBAction func cancelToConversationsViewController(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func editingUserProfile(_ sender: Any) {

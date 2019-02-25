@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class UserProfileModel {
     var image = UIImage(named: "placeholder-user")
@@ -14,36 +15,33 @@ class UserProfileModel {
     var discription = "👨‍💻 Пытаюсь кодить под ios                                                                     👨‍🎓 Учусь в Тинькофф ФинТех                                                                                          👨‍🏫 Помогаю развиваться другим"
 }
 
-class ConversationItems: ConversationCellConfiguration {
+class ConversationModel: ConversationCellConfiguration {
+    
     var name: String?
-    
     var message: String?
-    
     var date: Date?
-    
     var online: Bool?
-    
     var hasUnreadMessge: Bool?
-    
     var userImage: String?
     
-    init(name: String, message: String?, online: Bool?, hasUnreadMessge: Bool?, userImage: String?) {
+    init?(name: String?, message: String?, date: Date?, online: Bool?, hasUnreadMessge: Bool?, userImage: String?) {
+
         self.name = name
         self.message = message
+        self.date = date
         self.online = online
         self.hasUnreadMessge = hasUnreadMessge
         self.userImage = userImage
-        
     }
 }
-
-class ConversationItemsForSection {
-    var items = [ConversationTableViewCell]()
-    var id = Int()
-    var status = String()
     
-    init(id: Int, status: String) {
-        self.id = id
-        self.status = status
+    class MessageModel {
+        var text: String?
+        var incomingMessage: Bool
+        
+        init(text: String?, incomingMessage: Bool) {
+            self.text = text
+            self.incomingMessage = incomingMessage
+        }
     }
-}
+
