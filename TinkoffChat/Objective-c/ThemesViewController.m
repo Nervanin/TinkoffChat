@@ -19,14 +19,12 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    UIColor* firstThemeColor = [UIColor lightGrayColor]; // release not needed
+    UIColor* firstThemeColor = [UIColor lightGrayColor]; 
     UIColor* secondThemeColor = [UIColor darkGrayColor];
-   // UIColor colorWithRed:1.0 green:(244.0/255.0) blue:(100.0/255.0) alpha:1.0]];
     UIColor* thirdThemeColor = [UIColor colorWithRed:1.0 green:(244.0/255.0) blue:(100.0/255.0) alpha:1.0];
 
     _model = [[Themes alloc]initFirstTheme:firstThemeColor secondTheme:secondThemeColor thirdTheme:thirdThemeColor];
     
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,7 +54,6 @@
     }
 }
 
-
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -65,12 +62,12 @@
     if (_delegate == nil)
         return;
     
-    if([sender.currentTitle isEqualToString:@"Light theme"]) {
+    if ([sender.currentTitle isEqualToString:@"Light theme"])  {
         [_delegate themesViewController:self didSelectTheme:self.model.lightColor];
-    } else if ([sender.currentTitle isEqualToString:@"Blue theme"]) {
-        [_delegate themesViewController:self didSelectTheme:self.model.blueColor];
-    } else if ([sender.currentTitle isEqualToString:@"Dark theme"]) {
-        [_delegate themesViewController:self didSelectTheme:self.model.blackColor];
+    } else if ([sender.currentTitle isEqualToString:@"Gray Theme"]) {
+        [_delegate themesViewController:self didSelectTheme:self.model.grayColor];
+    } else if ([sender.currentTitle isEqualToString:@"SHAMPANb!!!!"]) {
+        [_delegate themesViewController:self didSelectTheme:self.model.yellowColor];
     }
 }
 

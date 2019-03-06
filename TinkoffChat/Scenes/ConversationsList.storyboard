@@ -174,14 +174,57 @@
             </objects>
             <point key="canvasLocation" x="-496" y="-589"/>
         </scene>
-        <!--Swift Themes View Controller-->
+        <!--Themes View Controller-->
         <scene sceneID="gbc-kb-5Wq">
             <objects>
-                <viewController storyboardIdentifier="ThemesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SVO-y4-xKp" customClass="SwiftThemesViewController" customModule="TinkoffChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThemesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SVO-y4-xKp" customClass="ThemesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4qL-R7-ast">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdI-2a-iLs">
+                                <rect key="frame" x="165" y="433" width="84" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CEx-wu-e0k"/>
+                                    <constraint firstAttribute="width" constant="84" id="n9Z-ku-H86"/>
+                                </constraints>
+                                <state key="normal" title="Gray Theme"/>
+                                <connections>
+                                    <action selector="chengeThemeButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="N7A-89-F2u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWs-c2-W5C">
+                                <rect key="frame" x="157" y="543" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1cN-Ll-tII"/>
+                                    <constraint firstAttribute="width" constant="100" id="BN8-Af-gLU"/>
+                                </constraints>
+                                <state key="normal" title="SHAMPANb!!!!"/>
+                                <connections>
+                                    <action selector="chengeThemeButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="CCN-1n-ufT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l39-6f-u35">
+                                <rect key="frame" x="166" y="308" width="82" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="C7x-CT-i91"/>
+                                    <constraint firstAttribute="height" constant="30" id="N7p-OJ-tJq"/>
+                                </constraints>
+                                <state key="normal" title="Light theme"/>
+                                <connections>
+                                    <action selector="chengeThemeButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="ZvD-4h-onI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xdI-2a-iLs" firstAttribute="top" secondItem="mfL-17-dB7" secondAttribute="top" constant="345" id="8dd-lt-lJI"/>
+                            <constraint firstItem="bWs-c2-W5C" firstAttribute="leading" secondItem="mfL-17-dB7" secondAttribute="leading" constant="157" id="OkD-Ed-lLQ"/>
+                            <constraint firstItem="bWs-c2-W5C" firstAttribute="top" secondItem="xdI-2a-iLs" secondAttribute="bottom" constant="80" id="RKn-h3-y33"/>
+                            <constraint firstItem="l39-6f-u35" firstAttribute="leading" secondItem="mfL-17-dB7" secondAttribute="leading" constant="166" id="YqJ-xR-uj6"/>
+                            <constraint firstItem="xdI-2a-iLs" firstAttribute="leading" secondItem="mfL-17-dB7" secondAttribute="leading" constant="165" id="g1e-yN-vUl"/>
+                            <constraint firstItem="xdI-2a-iLs" firstAttribute="top" secondItem="l39-6f-u35" secondAttribute="bottom" constant="95" id="wxm-2L-6av"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mfL-17-dB7"/>
                     </view>
                     <navigationItem key="navigationItem" id="ANZ-cN-0zS">
@@ -189,11 +232,10 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jLM-Td-MJp">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelButthonPressed:" destination="7KD-6B-iBa" eventType="touchUpInside" id="m1S-Gq-my2"/>
-                                    <action selector="cancelButtonPressed" destination="SVO-y4-xKp" eventType="touchUpInside" id="Iqn-ws-w2S"/>
-                                    <action selector="cancelButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="JKA-wh-01Y"/>
+                                    <action selector="cancelButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="NU8-vK-Kli"/>
                                 </connections>
                             </button>
                         </barButtonItem>

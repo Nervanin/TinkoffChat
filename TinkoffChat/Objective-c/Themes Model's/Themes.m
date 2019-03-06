@@ -14,8 +14,8 @@
 - (instancetype) initFirstTheme:(UIColor *)lightColor secondTheme:(UIColor *)blueColor thirdTheme:(UIColor *)blackColor {
     if (self = [super init]) {
         self.lightColor = lightColor;
-        self.blueColor = blueColor;
-        self.blackColor = blackColor;
+        self.grayColor = blueColor;
+        self.yellowColor = blackColor;
     }
     return self;
 }
@@ -39,11 +39,11 @@
     }
 }
 
-- (UIColor *)blueColor {
+- (UIColor *)grayColor {
     return _blueColor;
 }
 
-- (void)setBlueColor:(UIColor *)blueColor {
+- (void)setGrayColor:(UIColor *)blueColor {
     if (_blueColor != blueColor) {
         [_blueColor release];
         _blueColor = [blueColor retain];
@@ -51,11 +51,11 @@
 }
 
 
-- (UIColor *)blackColor {
+- (UIColor *)yellowColor {
     return _blackColor;
 }
 
-- (void)setBlackColor:(UIColor *)blackColor {
+- (void)setYellowColor:(UIColor *)blackColor {
     if (_blackColor != blackColor) {
         [_blackColor release];
         _blackColor = [blackColor retain];

@@ -12,11 +12,9 @@
 		B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */; };
 		B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530C2E62222F75000DC7A1C /* ConversationViewController.swift */; };
 		B537909B222DF06E007FAC24 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = B537909A222DF06E007FAC24 /* Themes.m */; };
-		B53790A0222EA451007FAC24 /* ThemesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B537909F222EA451007FAC24 /* ThemesViewController.storyboard */; };
 		B53790A2222F0DC7007FAC24 /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A1222F0DC7007FAC24 /* NSUserDefaultsExtension.swift */; };
 		B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A5222F114C007FAC24 /* ThemesSettings.swift */; };
 		B53790AE222F4C9D007FAC24 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790AD222F4C9D007FAC24 /* ColorExtension.swift */; };
-		B53790AF222F4E15007FAC24 /* ThemeViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */; };
 		B552670622232A3400CABDEA /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B552670522232A3400CABDEA /* Conversation.storyboard */; };
 		B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DB2222EAE000CE4204 /* DateExtension.swift */; };
 		B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DD2222EB1700CE4204 /* ConversationsListViewController.swift */; };
@@ -31,6 +29,7 @@
 		B5A81761221A7B5000A05D3B /* ProfileGestureRecExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */; };
 		B5A81764221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81763221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift */; };
 		B5A81766221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81765221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift */; };
+		B5B8048222304DF400021038 /* SwiftThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */; };
 		B5CFCBE8221A8B84005C1134 /* SetUserProfileImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFCBE7221A8B84005C1134 /* SetUserProfileImageProtocol.swift */; };
 		B5D93B94220B6EC700B12EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */; };
 		B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */; };
@@ -52,9 +51,8 @@
 		B5379098222DF036007FAC24 /* ThemesViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesViewControllerDelegate.h; sourceTree = "<group>"; };
 		B5379099222DF067007FAC24 /* Themes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Themes.h; sourceTree = "<group>"; };
 		B537909A222DF06E007FAC24 /* Themes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Themes.m; sourceTree = "<group>"; };
-		B537909F222EA451007FAC24 /* ThemesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemesViewController.storyboard; sourceTree = "<group>"; };
 		B53790A1222F0DC7007FAC24 /* NSUserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtension.swift; sourceTree = "<group>"; };
-		B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewControllerSwift.swift; sourceTree = "<group>"; };
+		B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftThemeViewController.swift; sourceTree = "<group>"; };
 		B53790A5222F114C007FAC24 /* ThemesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSettings.swift; sourceTree = "<group>"; };
 		B53790AD222F4C9D007FAC24 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B552670522232A3400CABDEA /* Conversation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 				B5D93B97220B6EC700B12EA4 /* Profile.storyboard */,
 				B58B3641221DF66500DDE309 /* ConversationsList.storyboard */,
 				B552670522232A3400CABDEA /* Conversation.storyboard */,
-				B537909F222EA451007FAC24 /* ThemesViewController.storyboard */,
 				B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */,
 			);
 			path = Scenes;
@@ -237,7 +234,7 @@
 		B5D93B92220B6EC700B12EA4 /* TinkoffChat */ = {
 			isa = PBXGroup;
 			children = (
-				B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */,
+				B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */,
 				B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */,
 				B53790A5222F114C007FAC24 /* ThemesSettings.swift */,
 				B5379092222DEF6F007FAC24 /* Objective-c */,
@@ -324,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D93BA1220B6EC700B12EA4 /* LaunchScreen.storyboard in Resources */,
-				B53790A0222EA451007FAC24 /* ThemesViewController.storyboard in Resources */,
 				B5D93B9E220B6EC700B12EA4 /* Assets.xcassets in Resources */,
 				B58B3642221DF66500DDE309 /* ConversationsList.storyboard in Resources */,
 				B552670622232A3400CABDEA /* Conversation.storyboard in Resources */,
@@ -394,7 +390,7 @@
 				B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */,
 				B537909B222DF06E007FAC24 /* Themes.m in Sources */,
 				B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */,
-				B53790AF222F4E15007FAC24 /* ThemeViewControllerSwift.swift in Sources */,
+				B5B8048222304DF400021038 /* SwiftThemeViewController.swift in Sources */,
 				B5977E1C2230007C00F7238A /* ThemesViewController.m in Sources */,
 				B5A81764221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift in Sources */,
 				B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */,

@@ -17,12 +17,12 @@
     UIColor *_blackColor;
 }
 
-- (instancetype) initFirstTheme: (UIColor *)lightColor secondTheme: (UIColor *)blueColor thirdTheme: (UIColor *)blackColor;
+- (instancetype) initFirstTheme: (UIColor *)lightColor secondTheme: (UIColor *)grayColor thirdTheme: (UIColor *)yellowColor;
 - (void) dealloc;
 
 @property (retain, nonatomic) UIColor* lightColor;
-@property (retain, nonatomic) UIColor* blueColor;
-@property (retain, nonatomic) UIColor* blackColor;
+@property (retain, nonatomic) UIColor* grayColor;
+@property (retain, nonatomic) UIColor* yellowColor;
 
 
 @end

@@ -10,6 +10,17 @@ import UIKit
 
 class ConversationsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ThemesViewControllerDelegate {
     
+    func themesViewController(_ controller: ThemesViewController!, didSelectTheme selectedTheme: UIColor!) {
+        guard let theme = selectedTheme else {
+            return
+        }
+        
+        controller?.view.backgroundColor = theme
+        logThemeChanging(selectedTheme: theme)
+        
+        ThemesManager.sharedInstance.applyTheme(theme)
+    }
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var userProfileButton: UIButton!
     
@@ -138,8 +149,8 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
             if let navigationDestination = segue.destination as? UINavigationController {
                 if let objcDestination = navigationDestination.viewControllers.first as? ThemesViewController {
                     objcDestination.delegate = self
-                } else if let swiftDestination = navigationDestination.viewControllers.first as? SwiftThemesViewController {
-                    swiftDestination.closure = { [unowned self] (controller: SwiftThemesViewController, selectedTheme: UIColor?) in
+                } else if let swiftDestination = navigationDestination.viewControllers.first as? ThemesViewControllerSwift {
+                    swiftDestination.closure = { [unowned self] (controller: ThemesViewControllerSwift, selectedTheme: UIColor?) in
                         guard let theme = selectedTheme else {
                             return
                         }
@@ -160,17 +171,6 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
             return
         }
         print(redGreenBlue)
-    }
-    
-    func themesViewController(_ controller: ThemesViewController?, didSelectTheme selectedTheme: UIColor?) {
-        guard let theme = selectedTheme else {
-            return
-        }
-        
-        controller?.view.backgroundColor = theme
-        logThemeChanging(selectedTheme: theme)
-        
-        ThemesManager.sharedInstance.applyTheme(theme)
     }
     
 }
