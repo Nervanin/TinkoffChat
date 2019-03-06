@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ConversationsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ThemesViewControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var userProfileButton: UIButton!
@@ -55,6 +55,11 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
         userProfileButton.layer.cornerRadius = userProfileButton.bounds.height / 2
     }
     
+//    @IBAction func settingsButtonTapped(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "ThemesViewController", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "ThemesNC") 
+//        present(viewController, animated: true, completion: nil)
+//    }
     @IBAction func userProfileButtonPressed(_ sender: UIButton) {
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let profileNavigationController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileNavigationController")
@@ -64,6 +69,10 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+//    @IBAction func settingsButtonPressed(_ sender: Any) {
+////        let themesViewController = ThemesViewController()
+////        navigationController?.pushViewController(themesViewController, animated: true)
+//    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return conversationItemsArray.count
     }
@@ -125,6 +134,43 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
                 }
             }
         }
+        if segue.identifier == "ToThemesSegue" {
+            if let navigationDestination = segue.destination as? UINavigationController {
+                if let objcDestination = navigationDestination.viewControllers.first as? ThemesViewController {
+                    objcDestination.delegate = self
+                } else if let swiftDestination = navigationDestination.viewControllers.first as? SwiftThemesViewController {
+                    swiftDestination.closure = { [unowned self] (controller: SwiftThemesViewController, selectedTheme: UIColor?) in
+                        guard let theme = selectedTheme else {
+                            return
+                        }
+
+                        controller.view.backgroundColor = theme
+                        self.logThemeChanging(selectedTheme: theme)
+                        
+                        ThemesManager.sharedInstance.applyTheme(theme)
+                    }
+                }
+            }
+        }
+    }
+    // MARK: ThemesViewControllerDelegate is realised
+    
+    private func logThemeChanging(selectedTheme: UIColor) {
+        guard let redGreenBlue = selectedTheme.redGreenBlue255() else {
+            return
+        }
+        print(redGreenBlue)
+    }
+    
+    func themesViewController(_ controller: ThemesViewController?, didSelectTheme selectedTheme: UIColor?) {
+        guard let theme = selectedTheme else {
+            return
+        }
+        
+        controller?.view.backgroundColor = theme
+        logThemeChanging(selectedTheme: theme)
+        
+        ThemesManager.sharedInstance.applyTheme(theme)
     }
     
 }

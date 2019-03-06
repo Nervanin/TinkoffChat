@@ -15,9 +15,13 @@ var logOn: Bool = false
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+   
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         applicationMoved(from: "Not running", to: "Not running")
+        
+        if let saveTheme = UserDefaults.standard.colorForKey(key: "themeColor") {
+            ThemesManager.sharedInstance.applyTheme(saveTheme)
+        }
         return true
     }
     

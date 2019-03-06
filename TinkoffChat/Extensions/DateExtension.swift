@@ -14,7 +14,6 @@ extension Date {
         
         guard !from.isEmpty else {
             return nil
-            
         }
         
         let dateFormatter = DateFormatter()

@@ -11,6 +11,13 @@
 		B51C3150221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C314F221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift */; };
 		B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */; };
 		B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530C2E62222F75000DC7A1C /* ConversationViewController.swift */; };
+		B537909B222DF06E007FAC24 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = B537909A222DF06E007FAC24 /* Themes.m */; };
+		B53790A0222EA451007FAC24 /* ThemesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B537909F222EA451007FAC24 /* ThemesViewController.storyboard */; };
+		B53790A2222F0DC7007FAC24 /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A1222F0DC7007FAC24 /* NSUserDefaultsExtension.swift */; };
+		B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A5222F114C007FAC24 /* ThemesSettings.swift */; };
+		B53790AE222F4C9D007FAC24 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790AD222F4C9D007FAC24 /* ColorExtension.swift */; };
+		B53790AF222F4E15007FAC24 /* ThemeViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */; };
+		B53790B0222F4E71007FAC24 /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5379096222DF026007FAC24 /* ThemesViewController.m */; };
 		B552670622232A3400CABDEA /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B552670522232A3400CABDEA /* Conversation.storyboard */; };
 		B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DB2222EAE000CE4204 /* DateExtension.swift */; };
 		B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DD2222EB1700CE4204 /* ConversationsListViewController.swift */; };
@@ -32,7 +39,6 @@
 		B5D93B9E220B6EC700B12EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */; };
 		B5D93BA1220B6EC700B12EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */; };
 		B5ECE57F22182574005AD783 /* ZoomUserImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */; };
-		B5F00289221FB85500F88004 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5F00288221FB85500F88004 /* icon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,17 @@
 		B51C314F221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerLogicForUserProfileImage.swift; sourceTree = "<group>"; };
 		B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
 		B530C2E62222F75000DC7A1C /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		B5379093222DEF94007FAC24 /* TinkoffChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinkoffChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5379095222DF014007FAC24 /* ThemesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
+		B5379096222DF026007FAC24 /* ThemesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemesViewController.m; sourceTree = "<group>"; };
+		B5379098222DF036007FAC24 /* ThemesViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesViewControllerDelegate.h; sourceTree = "<group>"; };
+		B5379099222DF067007FAC24 /* Themes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Themes.h; sourceTree = "<group>"; };
+		B537909A222DF06E007FAC24 /* Themes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Themes.m; sourceTree = "<group>"; };
+		B537909F222EA451007FAC24 /* ThemesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemesViewController.storyboard; sourceTree = "<group>"; };
+		B53790A1222F0DC7007FAC24 /* NSUserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtension.swift; sourceTree = "<group>"; };
+		B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewControllerSwift.swift; sourceTree = "<group>"; };
+		B53790A5222F114C007FAC24 /* ThemesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSettings.swift; sourceTree = "<group>"; };
+		B53790AD222F4C9D007FAC24 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B552670522232A3400CABDEA /* Conversation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		B565D5DB2222EAE000CE4204 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B565D5DD2222EB1700CE4204 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +80,6 @@
 		B5D93BA0220B6EC700B12EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D93BA2220B6EC700B12EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomUserImageViewController.swift; sourceTree = "<group>"; };
-		B5F00288221FB85500F88004 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon.jpg; path = ../../../Downloads/icon.jpg; sourceTree = "<group>"; };
 		D13F12F1225E29503664F6AA /* Pods-TinkoffChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.release.xcconfig"; sourceTree = "<group>"; };
 		E6073FE7680D7434BE1FEFA6 /* Pods_TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +103,27 @@
 				D13F12F1225E29503664F6AA /* Pods-TinkoffChat.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B5379092222DEF6F007FAC24 /* Objective-c */ = {
+			isa = PBXGroup;
+			children = (
+				B5379098222DF036007FAC24 /* ThemesViewControllerDelegate.h */,
+				B5379096222DF026007FAC24 /* ThemesViewController.m */,
+				B5379095222DF014007FAC24 /* ThemesViewController.h */,
+				B5379093222DEF94007FAC24 /* TinkoffChat-Bridging-Header.h */,
+				B537909C222DF078007FAC24 /* Themes Model's */,
+			);
+			path = "Objective-c";
+			sourceTree = "<group>";
+		};
+		B537909C222DF078007FAC24 /* Themes Model's */ = {
+			isa = PBXGroup;
+			children = (
+				B537909A222DF06E007FAC24 /* Themes.m */,
+				B5379099222DF067007FAC24 /* Themes.h */,
+			);
+			path = "Themes Model's";
 			sourceTree = "<group>";
 		};
 		B565D5D92222EAA100CE4204 /* ConversationList */ = {
@@ -161,6 +198,8 @@
 				B5A81762221A7B8200A05D3B /* Profile Extension */,
 				B5A81767221A7CCD00A05D3B /* Editing User Profile Extesion */,
 				B565D5DB2222EAE000CE4204 /* DateExtension.swift */,
+				B53790A1222F0DC7007FAC24 /* NSUserDefaultsExtension.swift */,
+				B53790AD222F4C9D007FAC24 /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +210,7 @@
 				B5D93B97220B6EC700B12EA4 /* Profile.storyboard */,
 				B58B3641221DF66500DDE309 /* ConversationsList.storyboard */,
 				B552670522232A3400CABDEA /* Conversation.storyboard */,
+				B537909F222EA451007FAC24 /* ThemesViewController.storyboard */,
 				B5D93B9F220B6EC700B12EA4 /* LaunchScreen.storyboard */,
 			);
 			path = Scenes;
@@ -197,7 +237,10 @@
 		B5D93B92220B6EC700B12EA4 /* TinkoffChat */ = {
 			isa = PBXGroup;
 			children = (
+				B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */,
 				B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */,
+				B53790A5222F114C007FAC24 /* ThemesSettings.swift */,
+				B5379092222DEF6F007FAC24 /* Objective-c */,
 				B565D5DA2222EABF00CE4204 /* Profile */,
 				B565D5D92222EAA100CE4204 /* ConversationList */,
 				B599F88522240BB400439B7A /* Conversation */,
@@ -205,7 +248,6 @@
 				B583A1622219804D00C18085 /* Data Source */,
 				B5B10B842210167600CB3F0E /* Scenes */,
 				B5D93B9D220B6EC700B12EA4 /* Assets.xcassets */,
-				B5F00288221FB85500F88004 /* icon.jpg */,
 				B5D93BA2220B6EC700B12EA4 /* Info.plist */,
 				B5D93B9A220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld */,
 			);
@@ -254,6 +296,7 @@
 				TargetAttributes = {
 					B5D93B8F220B6EC700B12EA4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -281,11 +324,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D93BA1220B6EC700B12EA4 /* LaunchScreen.storyboard in Resources */,
+				B53790A0222EA451007FAC24 /* ThemesViewController.storyboard in Resources */,
 				B5D93B9E220B6EC700B12EA4 /* Assets.xcassets in Resources */,
 				B58B3642221DF66500DDE309 /* ConversationsList.storyboard in Resources */,
 				B552670622232A3400CABDEA /* Conversation.storyboard in Resources */,
 				B5D93B99220B6EC700B12EA4 /* Profile.storyboard in Resources */,
-				B5F00289221FB85500F88004 /* icon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +382,8 @@
 				B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */,
 				B5A81766221A7CA700A05D3B /* EditingUserProfileImagePickerExtension.swift in Sources */,
 				B5ECE57F22182574005AD783 /* ZoomUserImageViewController.swift in Sources */,
+				B53790AE222F4C9D007FAC24 /* ColorExtension.swift in Sources */,
+				B53790A2222F0DC7007FAC24 /* NSUserDefaultsExtension.swift in Sources */,
 				B599F8842224048400439B7A /* MessageTableViewCell.swift in Sources */,
 				B5CFCBE8221A8B84005C1134 /* SetUserProfileImageProtocol.swift in Sources */,
 				B5A8175F221A7A9200A05D3B /* ProfilePickerImageExtesion.swift in Sources */,
@@ -346,7 +391,11 @@
 				B5D93B94220B6EC700B12EA4 /* AppDelegate.swift in Sources */,
 				B57E183E221ED37800BB9233 /* ConversationTableViewCell.swift in Sources */,
 				B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */,
+				B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */,
+				B537909B222DF06E007FAC24 /* Themes.m in Sources */,
 				B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */,
+				B53790AF222F4E15007FAC24 /* ThemeViewControllerSwift.swift in Sources */,
+				B53790B0222F4E71007FAC24 /* ThemesViewController.m in Sources */,
 				B5A81764221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift in Sources */,
 				B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */,
 				B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */,
@@ -501,6 +550,8 @@
 			baseConfigurationReference = 6553760C1E52A43529F6B398 /* Pods-TinkoffChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YB3X76G54W;
 				INFOPLIST_FILE = TinkoffChat/Info.plist;
@@ -511,6 +562,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Nervanin.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TinkoffChat/Objective-c/TinkoffChat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -521,6 +574,8 @@
 			baseConfigurationReference = D13F12F1225E29503664F6AA /* Pods-TinkoffChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YB3X76G54W;
 				INFOPLIST_FILE = TinkoffChat/Info.plist;
@@ -531,6 +586,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Nervanin.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TinkoffChat/Objective-c/TinkoffChat-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
