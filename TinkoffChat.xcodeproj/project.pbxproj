@@ -17,7 +17,6 @@
 		B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A5222F114C007FAC24 /* ThemesSettings.swift */; };
 		B53790AE222F4C9D007FAC24 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790AD222F4C9D007FAC24 /* ColorExtension.swift */; };
 		B53790AF222F4E15007FAC24 /* ThemeViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A3222F0EB6007FAC24 /* ThemeViewControllerSwift.swift */; };
-		B53790B0222F4E71007FAC24 /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5379096222DF026007FAC24 /* ThemesViewController.m */; };
 		B552670622232A3400CABDEA /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B552670522232A3400CABDEA /* Conversation.storyboard */; };
 		B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DB2222EAE000CE4204 /* DateExtension.swift */; };
 		B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DD2222EB1700CE4204 /* ConversationsListViewController.swift */; };
@@ -25,6 +24,7 @@
 		B583A1612219784F00C18085 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583A1602219784F00C18085 /* Models.swift */; };
 		B588A0342219A73700F691A5 /* EditingUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588A0332219A73700F691A5 /* EditingUserProfileViewController.swift */; };
 		B58B3642221DF66500DDE309 /* ConversationsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58B3641221DF66500DDE309 /* ConversationsList.storyboard */; };
+		B5977E1C2230007C00F7238A /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5379096222DF026007FAC24 /* ThemesViewController.m */; };
 		B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599F8802224028100439B7A /* MessageCellConfiguration.swift */; };
 		B599F8842224048400439B7A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599F8832224048400439B7A /* MessageTableViewCell.swift */; };
 		B5A8175F221A7A9200A05D3B /* ProfilePickerImageExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8175E221A7A9200A05D3B /* ProfilePickerImageExtesion.swift */; };
@@ -395,7 +395,7 @@
 				B537909B222DF06E007FAC24 /* Themes.m in Sources */,
 				B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */,
 				B53790AF222F4E15007FAC24 /* ThemeViewControllerSwift.swift in Sources */,
-				B53790B0222F4E71007FAC24 /* ThemesViewController.m in Sources */,
+				B5977E1C2230007C00F7238A /* ThemesViewController.m in Sources */,
 				B5A81764221A7C4200A05D3B /* EditingUserProfileGestureRecExtesion.swift in Sources */,
 				B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */,
 				B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */,

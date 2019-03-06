@@ -30,7 +30,7 @@
 @property (assign, nonatomic) id<ThemesViewControllerDelegate> delegate;
 @property (retain, nonatomic) Themes *model;
 
-- (IBAction)cancellButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)chengeThemeButtonPressed:(id)sender;
 
 @end

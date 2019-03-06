@@ -174,65 +174,14 @@
             </objects>
             <point key="canvasLocation" x="-496" y="-589"/>
         </scene>
-        <!--Themes View Controller-->
+        <!--Swift Themes View Controller-->
         <scene sceneID="gbc-kb-5Wq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vto-M7-AZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="ThemesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SVO-y4-xKp" customClass="ThemesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThemesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SVO-y4-xKp" customClass="SwiftThemesViewController" customModule="TinkoffChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4qL-R7-ast">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eth-ch-3Fi">
-                                <rect key="frame" x="88" y="335" width="239" height="44"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Light theme">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="chengeThemeButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="zOC-n1-7AM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brz-Df-KgD">
-                                <rect key="frame" x="88" y="518" width="239" height="44"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Dark theme">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="chengeThemeButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="iog-YK-8QL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4z-Ns-1KA">
-                                <rect key="frame" x="87.5" y="426" width="239" height="44"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cV0-fy-qHf"/>
-                                    <constraint firstAttribute="width" constant="239" id="jUh-5A-ktR"/>
-                                </constraints>
-                                <state key="normal" title="Blue theme">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="chengeThemeButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="mHH-t7-Dpo"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Brz-Df-KgD" firstAttribute="height" secondItem="j4z-Ns-1KA" secondAttribute="height" id="3Oa-xa-cw9"/>
-                            <constraint firstItem="eth-ch-3Fi" firstAttribute="height" secondItem="j4z-Ns-1KA" secondAttribute="height" id="7mK-r2-kGh"/>
-                            <constraint firstItem="eth-ch-3Fi" firstAttribute="leading" secondItem="mfL-17-dB7" secondAttribute="leading" constant="88" id="8MM-Mx-xLF"/>
-                            <constraint firstItem="j4z-Ns-1KA" firstAttribute="centerY" secondItem="mfL-17-dB7" secondAttribute="centerY" constant="-27" id="Ssa-Xi-REz"/>
-                            <constraint firstItem="eth-ch-3Fi" firstAttribute="top" secondItem="mfL-17-dB7" secondAttribute="top" constant="247" id="Ws0-v2-oXm"/>
-                            <constraint firstItem="mfL-17-dB7" firstAttribute="bottom" secondItem="Brz-Df-KgD" secondAttribute="bottom" constant="300" id="ZT6-1x-xzH"/>
-                            <constraint firstItem="eth-ch-3Fi" firstAttribute="width" secondItem="j4z-Ns-1KA" secondAttribute="width" id="fV1-zE-cwA"/>
-                            <constraint firstItem="j4z-Ns-1KA" firstAttribute="centerX" secondItem="mfL-17-dB7" secondAttribute="centerX" id="ghk-Xo-7Cv"/>
-                            <constraint firstItem="Brz-Df-KgD" firstAttribute="leading" secondItem="mfL-17-dB7" secondAttribute="leading" constant="88" id="mgn-t6-d3a"/>
-                            <constraint firstItem="Brz-Df-KgD" firstAttribute="width" secondItem="j4z-Ns-1KA" secondAttribute="width" id="wyJ-up-CDs"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mfL-17-dB7"/>
                     </view>
                     <navigationItem key="navigationItem" id="ANZ-cN-0zS">
@@ -242,12 +191,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="cancellButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="WlU-Eo-N3K"/>
+                                    <action selector="cancelButthonPressed:" destination="7KD-6B-iBa" eventType="touchUpInside" id="m1S-Gq-my2"/>
+                                    <action selector="cancelButtonPressed" destination="SVO-y4-xKp" eventType="touchUpInside" id="Iqn-ws-w2S"/>
+                                    <action selector="cancelButtonPressed:" destination="SVO-y4-xKp" eventType="touchUpInside" id="JKA-wh-01Y"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vto-M7-AZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7KD-6B-iBa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="349" y="-588"/>
         </scene>
