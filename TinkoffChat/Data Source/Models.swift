@@ -9,10 +9,10 @@
 import UIKit
 import Foundation
 
-class UserProfileModel {
-    var image = UIImage(named: "placeholder-user")
+struct UserProfileModel: Codable {
+    var image: Data? //UIImage(named: "placeholder-user")
     var name = "Мелешко Константин"
-    var discription = "👨‍💻 Пытаюсь кодить под ios \n👨‍🎓 Учусь в Тинькофф ФинТех \n👨‍🏫 Помогаю развиваться другим"
+    var description = "👨‍💻 Пытаюсь кодить под ios \n👨‍🎓 Учусь в Тинькофф ФинТех \n👨‍🏫 Помогаю развиваться другим"
 }
 
 class ConversationModel: ConversationCellConfiguration {

@@ -30,8 +30,8 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
             self.chooseImagePickerAction(source: .photoLibrary)
         }
         let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { (action) in
-            self.userProfileModel.image = UIImage(named: "placeholder-user")
-            self.userImage.image = self.userProfileModel.image
+//            self.userProfileModel.data = UIImage(named: "placeholder-user")
+//            self.userImage.image = self.userProfileModel.image
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         alertController.addAction(cameraAction)
