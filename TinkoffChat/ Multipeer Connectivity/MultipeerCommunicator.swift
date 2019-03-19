@@ -14,7 +14,7 @@ class MultipeerCommunicator: NSObject, Communicator {
     
     var delegate: CommunicatorDelegate?
     var online: Bool
-    var sessions: [String: MCSession] = [String: MCSession]()
+    var sessions = [String: MCSession]()
     
     lazy var session : MCSession = {
         let session = MCSession(peer: selfPeerID)
