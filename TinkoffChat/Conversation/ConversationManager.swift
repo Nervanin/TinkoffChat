@@ -10,8 +10,8 @@ import UIKit
 
 class ConversationManager: NSObject {
     func createConversationWith(userName: String, userID: String) -> ConversationModel {
-        let conversation = ConversationModel(name: userName, messages: [], message: nil, date: Date(), online: true, hasUnreadMessge: true, userImage: nil, id: userID)
-        return conversation!
+        let conversation = ConversationModel(name: userName, messages: [], message: nil, date: Date(), online: true, userId: userID, hasUnreadMessages: true)
+        return conversation
     }
     
     private func generateRandomDate() -> Date? {

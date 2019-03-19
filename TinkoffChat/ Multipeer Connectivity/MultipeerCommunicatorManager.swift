@@ -20,8 +20,9 @@ class CommunicatorManager: NSObject, CommunicatorDelegate {
         multipeerCommunicator = MultipeerCommunicator(delegate: self)
     }
     
+    
     func didFoundUser(userID: String, userName: String?) {
-        if let conversation = conversations.first(where: {$0.id == userID}) {
+        if let conversation = conversations.first(where: {$0.userId == userID}) {
             conversation.online = true
         } else {
             let conversation = ConversationManager().createConversationWith(userName: userName!, userID: userID)
@@ -32,7 +33,7 @@ class CommunicatorManager: NSObject, CommunicatorDelegate {
     }
     
     func didLostUser(userID: String) {
-        if let conversation = conversations.first(where: {$0.id == userID}) {
+        if let conversation = conversations.first(where: {$0.userId == userID}) {
             conversation.online = false
         }
         
@@ -50,8 +51,8 @@ class CommunicatorManager: NSObject, CommunicatorDelegate {
     
     func didReceiveMessage(text: String, fromUser: String, toUser: String) {
         for item in conversations {
-            if item.id == fromUser {
-                item.messages?.append(MessageModel(text: text, incomingMessage: true, messageID: nil, date: Date()))
+            if item.userId == fromUser {
+                item.messages?.append(MessageModel(text: text, isIncoming: true, messageID: nil, date: Date()))
                 conversationDelegate?.getMessage(messages: item.messages!)
             }
         }

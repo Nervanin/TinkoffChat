@@ -107,21 +107,24 @@ class ConversationsListViewController: UIViewController, UITableViewDelegate, UI
     func configerationCell(tableView: UITableView, model: ConversationModel) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId") as! ConversationTableViewCell
         //cell.userName.text = model.name
-        cell.name = "123"
+        cell.userName.text = model.name
+        cell.userImage? = "GOD"
+        cell.userImageView.clipsToBounds = true
+        cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.height / 2
         cell.dateOfLatsMessage.text = "\(Date.prepareDateToText(date: model.messages?.last?.date))"
         cell.conversation = model
         
         if let messages = model.messages,
             model.messages!.count > 0 {
-            if model.hasUnreadMessge! {
-                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+            if model.hasUnreadMessages {
+                cell.lastUserMessage?.font = UIFont.boldSystemFont(ofSize: 14)
             } else {
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+                cell.lastUserMessage?.font = UIFont.systemFont(ofSize: 14)
             }
-            cell.textLabel?.text = messages.last?.text
+            cell.lastUserMessage?.text = messages.last?.text
         } else {
-            cell.textLabel?.text = "No messages yet"
-            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 14)
+            cell.lastUserMessage?.text = "No messages yet"
+            cell.lastUserMessage?.font = UIFont.italicSystemFont(ofSize: 14)
         }
         return cell
     }

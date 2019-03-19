@@ -53,7 +53,7 @@ class ConversationTableViewCell: UITableViewCell {
     }
     var userImage: String? {
         didSet {
-            userImageView.image = UIImage(named: userImage ?? "placeholder-user")
+            userImageView.image = UIImage(named: userImage ?? "GOD")
         }
     }
     

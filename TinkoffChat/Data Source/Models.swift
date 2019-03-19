@@ -16,47 +16,38 @@ struct UserProfileModel: Codable {
     var description = "👨‍💻 Пытаюсь кодить под ios \n👨‍🎓 Учусь в Тинькофф ФинТех \n👨‍🏫 Помогаю развиваться другим"
 }
 
-class ConversationModel: ConversationCellConfiguration {
+class ConversationModel {
     var name: String?
     var messages: [MessageModel]?
+    var userId: String?
     var message: String?
     var date: Date?
-    var online: Bool?
-    var hasUnreadMessge: Bool?
+    var online: Bool
+    var hasUnreadMessages: Bool
     var userImage: String?
-    var id: String?
-//
-//    init?(name: String?, message: [MessageModel]?, date: Date?, online: Bool?, hasUnreadMessge: Bool?, userImage: String?) {
-//        
-//        self.name = name
-//        self.messages = message
-//        self.date = date
-//        self.online = online
-//        self.hasUnreadMessge = hasUnreadMessge
-//        self.userImage = userImage
-//    }
-//
-    init?(name: String?, messages: [MessageModel]?, message: String?, date: Date?, online: Bool?, hasUnreadMessge: Bool?, userImage: String?, id: String?) {
+    
+   
+    init(name: String?, messages: [MessageModel]?, message: String?, date: Date?, online: Bool, userId: String, hasUnreadMessages: Bool) {
         self.name = name
         self.messages = messages
         self.message = message
         self.date = date
         self.online = online
-        self.id = id
-        self.hasUnreadMessge = hasUnreadMessge
+        self.userId = userId
+        self.hasUnreadMessages = hasUnreadMessages
     }
 }
 
+
 class MessageModel {
-    
     var messageID: String?
     var text: String?
-    var incomingMessage: Bool
+    var isIncoming: Bool
     var date: Date?
     
-    init(text: String?, incomingMessage: Bool, messageID: String?, date: Date?) {
+    init(text: String?, isIncoming: Bool, messageID: String?, date: Date?) {
         self.text = text
-        self.incomingMessage = incomingMessage
+        self.isIncoming = isIncoming
         self.messageID = messageID
         self.date = date
     }

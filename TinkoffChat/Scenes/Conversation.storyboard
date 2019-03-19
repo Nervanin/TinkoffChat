@@ -91,6 +91,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJq-qv-INe">
                                 <rect key="frame" x="321" y="629" width="54" height="31"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendMessageButtonPressed:" destination="wNj-kK-Wq5" eventType="touchUpInside" id="5Dm-S2-nDl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,9 +125,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="messageTextField" destination="V0i-qk-zm6" id="FKh-Ci-uf2"/>
                         <outlet property="sendMessageButton" destination="tJq-qv-INe" id="8WV-7r-ZUh"/>
                         <outlet property="tableView" destination="AaV-pn-j1y" id="g1X-sy-JGP"/>
-                        <outlet property="textFeeldForMessage" destination="V0i-qk-zm6" id="FKh-Ci-uf2"/>
                         <outlet property="userProfileButton" destination="7FL-e1-rM5" id="bjJ-XV-8kg"/>
                     </connections>
                 </viewController>

@@ -25,7 +25,7 @@ class MultipeerCommunicator: NSObject, Communicator {
     let serviceType = "tinkoff-chat"
     let advertiserService : MCNearbyServiceAdvertiser
     let browserService : MCNearbyServiceBrowser
-    let selfPeerID : MCPeerID = MCPeerID(displayName: UIDevice.current.name)
+    let selfPeerID : MCPeerID = MCPeerID(displayName: (UIDevice.current.identifierForVendor?.uuidString)!)
     let discoveryInfo = ["userName": "KonstanTEEn"]
     
     init(delegate: CommunicatorDelegate) {
@@ -48,23 +48,25 @@ class MultipeerCommunicator: NSObject, Communicator {
     }
     
     func generateMessageId() -> String {
-        let string = "\(arc4random_uniform(UINT32_MAX)) + \(Date.timeIntervalSinceReferenceDate) + \(arc4random_uniform(UINT32_MAX))".data(using: .utf8)?.base64EncodedString()
+        let string = "\(arc4random_uniform(UINT32_MAX))+\(Date.timeIntervalSinceReferenceDate)+\(arc4random_uniform(UINT32_MAX))"
+            .data(using: .utf8)?.base64EncodedString()
         return string!
     }
-    
-    func sendMessage(string: String, to userId: String, competionandler: ((Bool, Error?) -> ())?) {
-        let sendMessage = ["eventType": "TextMessage", "messageId": generateMessageId(), "text": string]
-        
+    func sendMessage(string: String, to userID: String, competionandler completionHandler: ((Bool, Error?) -> ())?) {
+        let message = ["eventType" : "TextMessage",
+                       "messageId" : generateMessageId(),
+                       "text" : string]
         do {
-            let json = try JSONSerialization.data(withJSONObject: sendMessage, options: .prettyPrinted)
-            if let session = sessions[userId] {
-                try session.send(json, toPeers: session.connectedPeers, with: .reliable)
+            let messageData = try JSONSerialization.data(withJSONObject: message, options: [])
+            if let session = self.sessions[userID] {
+                try session.send(messageData, toPeers: session.connectedPeers, with: .reliable)
             }
         } catch {
-            print(error)
-            competionandler!(false, error)
+            print("Error: \(error), message not sending..")
+            completionHandler?(false, error)
         }
-        competionandler!(true, nil)
+        
+        completionHandler?(true, nil)
     }
     
 }
@@ -109,12 +111,7 @@ extension MultipeerCommunicator: MCNearbyServiceAdvertiserDelegate {
         }
         invitationHandler(true, session)
     }
-    
-    
-    
 }
-
-
 
 extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
     
@@ -123,17 +120,15 @@ extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
         guard peerID.displayName != selfPeerID.displayName else {
             return
         }
-
         guard let userInfo = info else {
             return
         }
-//
         guard let userName = userInfo["userName"] else {
             return
         }
         
         var session = sessions[peerID.displayName]
-        if session != nil {
+        if session == nil {
             session = MCSession(peer: selfPeerID, securityIdentity: nil, encryptionPreference: .none)
             session?.delegate = self
             sessions[peerID.displayName] = session
