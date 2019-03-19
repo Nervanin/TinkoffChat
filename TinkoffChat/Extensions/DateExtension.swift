@@ -9,18 +9,26 @@
 import Foundation
 
 extension Date {
-    
-    init?(from: String) {
+    static func prepareDateToText(date: Date?) -> String {
         
-        guard !from.isEmpty else {
-            return nil
-        }
-        
+        let todayDate = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         
-        guard let date = dateFormatter.date(from: from) else { return nil }
-        
-        self.init(timeInterval: 0, since: date)
+        if let _date = date {
+            
+            let todayDateString = dateFormatter.string(from: todayDate)
+            let messageDateString = dateFormatter.string(from: _date)
+            
+            if todayDateString != messageDateString {
+                dateFormatter.dateFormat = "dd MMM"
+            } else {
+                dateFormatter.dateFormat = "HH:mm"
+            }
+            let dateString = dateFormatter.string(from: _date)
+            
+            return dateString
+        }
+        return "--:--"
     }
 }

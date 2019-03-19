@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol ConversationDelegate {
+    func getMessage(messages: [MessageModel])
+    func didUserIsOnline(online: Bool)
+}

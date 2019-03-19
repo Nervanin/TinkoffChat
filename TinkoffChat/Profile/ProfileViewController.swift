@@ -19,44 +19,18 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     @IBOutlet weak var userDescription: UILabel!
     @IBOutlet weak var editingButton: UIButton!
     
-    @IBOutlet var setUpUserName: UITextField!
-    @IBOutlet var setUpUserDescription: UITextView!
-    
-    @IBOutlet var GCDButton: UIButton!
-    @IBOutlet var OperationButton: UIButton!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
     lazy var imagePicker = UIImagePickerController()
     lazy var singleTapGestureRecognizer = UITapGestureRecognizer()
     lazy var longPressGestureRecognizer = UILongPressGestureRecognizer()
     
     var dataSourceType: DataSourceType = .gcdDataManager
     
-    var isEditMode: Bool = false {
-        didSet {
-            editingButton.isHidden = isEditMode
-            userName.isHidden = isEditMode
-            
-//            GCDButton.isHidden = !isEditMode
-//            OperationButton.isHidden = !isEditMode
-            setUpUserDescription.isHidden = !isEditMode
-            setUpUserName.isHidden = !isEditMode
-        }
-    }
-    
-    var isSaveButtonEnabled: Bool = false {
-        didSet {
-            GCDButton.isEnabled = isSaveButtonEnabled
-            OperationButton.isEnabled = isSaveButtonEnabled
-        }
-    }
-    
     lazy var successfulAlert: UIAlertController = {
         let alert = UIAlertController(title: "Данные сохранены", message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
             guard let `self` = self else { return }
-            self.loadData()
-            self.isEditMode.toggle()
+           // self.loadData()
+         
         }
         alert.addAction(action)
         return alert
@@ -68,7 +42,7 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
         let okAction = UIAlertAction(title: "ОК", style: .default)
         let repeatAction = UIAlertAction(title: "Повторить", style: .default) { [weak self] _ in
             guard let `self` = self else { return }
-            self.saveData()
+           // self.saveData()
         }
         alert.addAction(okAction)
         alert.addAction(repeatAction)
@@ -93,7 +67,7 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
         
         setUpGestureRecognizer()
         imagePicker.delegate = self
-        loadData()
+       // loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,7 +80,7 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        updateData()
+      //  updateData()
         print(self.editingButton?.frame ?? "nil")
         /*
          Размеры фреймов кнопки "редактировать" в методах viewDidLoad и viewDidAppear отличаются потому что верстка в сториборде
@@ -116,44 +90,44 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
          */
     }
     
-    private func saveData() {
-        activityIndicator.startAnimating()
-        isSaveButtonEnabled = false
-        dataSourceType.dataSourceTypeManager().saveData(object: userProfileModel, file: Keys.profileState) { [weak self] error in
-            guard let `self` = self else { return }
-            self.activityIndicator.stopAnimating()
-            self.isSaveButtonEnabled = true
-            if let error = error {
-                print("Error: \(error)")
-                self.present(self.failureAlert, animated: true)
-            } else {
-                self.present(self.successfulAlert, animated: true)
-            }
-        }
-    }
+//    private func saveData() {
+//        activityIndicator.startAnimating()
+//        isSaveButtonEnabled = false
+//        dataSourceType.dataSourceTypeManager().saveData(object: userProfileModel, file: Keys.profileState) { [weak self] error in
+//            guard let `self` = self else { return }
+//            self.activityIndicator.stopAnimating()
+//            self.isSaveButtonEnabled = true
+//            if let error = error {
+//                print("Error: \(error)")
+//                self.present(self.failureAlert, animated: true)
+//            } else {
+//                self.present(self.successfulAlert, animated: true)
+//            }
+//        }
+//    }
+//
+//    private func loadData() {
+//        activityIndicator.startAnimating()
+//        isSaveButtonEnabled = false
+//        dataSourceType.dataSourceTypeManager().loadData(type: UserProfileModel.self, file: Keys.profileState) { [weak self] data, error in
+//            guard let `self` = self else { return }
+//            if let profileState = data {
+//                self.userProfileModel = profileState
+//            }
+//            self.updateData()
+//            self.activityIndicator.stopAnimating()
+//        }
+//    }
     
-    private func loadData() {
-        activityIndicator.startAnimating()
-        isSaveButtonEnabled = false
-        dataSourceType.dataSourceTypeManager().loadData(type: UserProfileModel.self, file: Keys.profileState) { [weak self] data, error in
-            guard let `self` = self else { return }
-            if let profileState = data {
-                self.userProfileModel = profileState
-            }
-            self.updateData()
-            self.activityIndicator.stopAnimating()
-        }
-    }
-    
-    private func updateData() {
-        self.userName.text = userProfileModel.name
-        self.userDescription.text = userProfileModel.name
-        self.setUpUserName.text = userProfileModel.name
-        self.setUpUserDescription.text = userProfileModel.description
-        if let imageData = userProfileModel.image {
-            self.userImage.image = UIImage(data: imageData)
-        }
-    }
+//    private func updateData() {
+//        self.userName.text = userProfileModel.name
+//        self.userDescription.text = userProfileModel.name
+//        self.setUpUserName.text = userProfileModel.name
+//        self.setUpUserDescription.text = userProfileModel.description
+//        if let imageData = userProfileModel.image {
+//            self.userImage.image = UIImage(data: imageData)
+//        }
+//    }
     
     struct Keys {
         static let profileState = "ProfileState"
@@ -178,8 +152,6 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     @IBAction func editingUserProfile(_ sender: Any) {
         editingButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         editingButton.setTitleColor(.white, for: .normal)
-        isEditMode.toggle()
-        isSaveButtonEnabled = false
 
     }
     
@@ -191,12 +163,12 @@ class ProfileViewController: UIViewController, SetUserProfileImageProtocol, Gest
     
     @IBAction func cgdActionPressed(_ sender: Any) {
         dataSourceType = .gcdDataManager
-        saveData()
+       // saveData()
     }
     
     @IBAction func operationActionPressed(_ sender: Any) {
         dataSourceType = .operationDataManager
-        saveData()
+       // saveData()
     }
     
  

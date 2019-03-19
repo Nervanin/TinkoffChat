@@ -10,11 +10,18 @@
 		5D9C31BF0B842B10DD3431B5 /* Pods_TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6073FE7680D7434BE1FEFA6 /* Pods_TinkoffChat.framework */; };
 		B51C3150221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C314F221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift */; };
 		B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */; };
+		B52DC436223F10A9007E6E55 /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DC435223F10A9007E6E55 /* MultipeerCommunicator.swift */; };
+		B52DC438223F10C7007E6E55 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DC437223F10C7007E6E55 /* Communicator.swift */; };
+		B52DC43A223F11D5007E6E55 /* CommunicatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DC439223F11D5007E6E55 /* CommunicatorDelegate.swift */; };
 		B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530C2E62222F75000DC7A1C /* ConversationViewController.swift */; };
 		B537909B222DF06E007FAC24 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = B537909A222DF06E007FAC24 /* Themes.m */; };
 		B53790A2222F0DC7007FAC24 /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A1222F0DC7007FAC24 /* NSUserDefaultsExtension.swift */; };
 		B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A5222F114C007FAC24 /* ThemesSettings.swift */; };
 		B53790AE222F4C9D007FAC24 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790AD222F4C9D007FAC24 /* ColorExtension.swift */; };
+		B53E5B0C22408A170065FA47 /* CommunicatorManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E5B0B22408A170065FA47 /* CommunicatorManagerProtocol.swift */; };
+		B53E5B0F22408AAA0065FA47 /* MultipeerCommunicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E5B0E22408AAA0065FA47 /* MultipeerCommunicatorManager.swift */; };
+		B53E5B1122408BF60065FA47 /* CheckOnlineUsersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E5B1022408BF60065FA47 /* CheckOnlineUsersProtocol.swift */; };
+		B53E5B1322414D680065FA47 /* ConversationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E5B1222414D680065FA47 /* ConversationManager.swift */; };
 		B552670622232A3400CABDEA /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B552670522232A3400CABDEA /* Conversation.storyboard */; };
 		B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DB2222EAE000CE4204 /* DateExtension.swift */; };
 		B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565D5DD2222EB1700CE4204 /* ConversationsListViewController.swift */; };
@@ -48,6 +55,9 @@
 		6553760C1E52A43529F6B398 /* Pods-TinkoffChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.debug.xcconfig"; sourceTree = "<group>"; };
 		B51C314F221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerLogicForUserProfileImage.swift; sourceTree = "<group>"; };
 		B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
+		B52DC435223F10A9007E6E55 /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
+		B52DC437223F10C7007E6E55 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		B52DC439223F11D5007E6E55 /* CommunicatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicatorDelegate.swift; sourceTree = "<group>"; };
 		B530C2E62222F75000DC7A1C /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		B5379093222DEF94007FAC24 /* TinkoffChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinkoffChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5379095222DF014007FAC24 /* ThemesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
@@ -59,6 +69,10 @@
 		B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftThemeViewController.swift; sourceTree = "<group>"; };
 		B53790A5222F114C007FAC24 /* ThemesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSettings.swift; sourceTree = "<group>"; };
 		B53790AD222F4C9D007FAC24 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		B53E5B0B22408A170065FA47 /* CommunicatorManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicatorManagerProtocol.swift; sourceTree = "<group>"; };
+		B53E5B0E22408AAA0065FA47 /* MultipeerCommunicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicatorManager.swift; sourceTree = "<group>"; };
+		B53E5B1022408BF60065FA47 /* CheckOnlineUsersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOnlineUsersProtocol.swift; sourceTree = "<group>"; };
+		B53E5B1222414D680065FA47 /* ConversationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationManager.swift; sourceTree = "<group>"; };
 		B552670522232A3400CABDEA /* Conversation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		B565D5DB2222EAE000CE4204 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B565D5DD2222EB1700CE4204 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +125,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B52DC434223F1080007E6E55 /*  Multipeer Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				B52DC435223F10A9007E6E55 /* MultipeerCommunicator.swift */,
+				B53E5B0E22408AAA0065FA47 /* MultipeerCommunicatorManager.swift */,
+			);
+			path = " Multipeer Connectivity";
+			sourceTree = "<group>";
+		};
 		B5379092222DEF6F007FAC24 /* Objective-c */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +153,16 @@
 				B5379099222DF067007FAC24 /* Themes.h */,
 			);
 			path = "Themes Model's";
+			sourceTree = "<group>";
+		};
+		B53E5B0D22408A220065FA47 /* CommunicatorProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				B52DC437223F10C7007E6E55 /* Communicator.swift */,
+				B52DC439223F11D5007E6E55 /* CommunicatorDelegate.swift */,
+				B53E5B0B22408A170065FA47 /* CommunicatorManagerProtocol.swift */,
+			);
+			path = CommunicatorProtocols;
 			sourceTree = "<group>";
 		};
 		B565D5D92222EAA100CE4204 /* ConversationList */ = {
@@ -168,6 +201,8 @@
 				B599F8802224028100439B7A /* MessageCellConfiguration.swift */,
 				B5EE355522385ABD006FF10B /* DataSourceProtocol.swift */,
 				B5EE35612239376C006FF10B /* DataSourceType.swift */,
+				B53E5B1022408BF60065FA47 /* CheckOnlineUsersProtocol.swift */,
+				B53E5B0D22408A220065FA47 /* CommunicatorProtocols */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -177,6 +212,7 @@
 			children = (
 				B530C2E62222F75000DC7A1C /* ConversationViewController.swift */,
 				B599F8832224048400439B7A /* MessageTableViewCell.swift */,
+				B53E5B1222414D680065FA47 /* ConversationManager.swift */,
 			);
 			path = Conversation;
 			sourceTree = "<group>";
@@ -234,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */,
+				B52DC434223F1080007E6E55 /*  Multipeer Connectivity */,
 				B5EE3552223859CE006FF10B /* Multithreading */,
 				B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */,
 				B53790A5222F114C007FAC24 /* ThemesSettings.swift */,
@@ -403,7 +440,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */,
+				B52DC43A223F11D5007E6E55 /* CommunicatorDelegate.swift in Sources */,
 				B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */,
+				B52DC436223F10A9007E6E55 /* MultipeerCommunicator.swift in Sources */,
 				B5EE355822387600006FF10B /* OperationDataManager.swift in Sources */,
 				B5EE355622385ABD006FF10B /* DataSourceProtocol.swift in Sources */,
 				B5EE355C22387B84006FF10B /* OperationLoad.swift in Sources */,
@@ -418,11 +457,15 @@
 				B57E183E221ED37800BB9233 /* ConversationTableViewCell.swift in Sources */,
 				B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */,
 				B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */,
+				B53E5B0F22408AAA0065FA47 /* MultipeerCommunicatorManager.swift in Sources */,
 				B537909B222DF06E007FAC24 /* Themes.m in Sources */,
+				B53E5B1122408BF60065FA47 /* CheckOnlineUsersProtocol.swift in Sources */,
 				B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */,
+				B53E5B1322414D680065FA47 /* ConversationManager.swift in Sources */,
 				B5B8048222304DF400021038 /* SwiftThemeViewController.swift in Sources */,
 				B5977E1C2230007C00F7238A /* ThemesViewController.m in Sources */,
 				B5EE355E22387BC0006FF10B /* OperationAsync.swift in Sources */,
+				B53E5B0C22408A170065FA47 /* CommunicatorManagerProtocol.swift in Sources */,
 				B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */,
 				B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */,
 				B5EE355A22387B51006FF10B /* OperationSave.swift in Sources */,
@@ -430,6 +473,7 @@
 				B5EE35622239376C006FF10B /* DataSourceType.swift in Sources */,
 				B51C3150221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift in Sources */,
 				B5A81761221A7B5000A05D3B /* ProfileGestureRecExtension.swift in Sources */,
+				B52DC438223F10C7007E6E55 /* Communicator.swift in Sources */,
 				B583A1612219784F00C18085 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

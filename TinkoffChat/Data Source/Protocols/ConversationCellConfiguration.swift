@@ -10,7 +10,7 @@ import Foundation
 
 protocol ConversationCellConfiguration: class {
     var name: String? { get set }
-    var message: String? { get set }
+    var messages: [MessageModel]? { get set }
     var date: Date? { get set }
     var online: Bool? { get set }
     var hasUnreadMessge: Bool? { get set }

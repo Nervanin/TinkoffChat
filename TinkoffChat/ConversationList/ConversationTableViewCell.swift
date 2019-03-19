@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ConversationTableViewCell: UITableViewCell, ConversationCellConfiguration {
+class ConversationTableViewCell: UITableViewCell {
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userName: UILabel!
     @IBOutlet var lastUserMessage: UILabel!
     @IBOutlet var dateOfLatsMessage: UILabel!
+    var messages: [MessageModel]?
+    var conversation: ConversationModel?
     
     var name: String? {
         didSet {
@@ -71,5 +73,7 @@ class ConversationTableViewCell: UITableViewCell, ConversationCellConfiguration 
         
         return dateFormatter.string(from: date)
     }
+    
+    
     
 }
