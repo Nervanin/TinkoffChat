@@ -14,11 +14,13 @@ class CoreDataManager {
     
     private static let stack = CoreDataStack()
     
+    
     static func saveProfile(model: ProfileModel, callback: @escaping (_ success: Bool) -> ()) {
         guard let context = self.stack.saveContext else {
             callback(false)
             return
         }
+        
         let appUser = AppUser.findOrInserAppUser(in: context)
         if let name = model.name {
             appUser?.name = name
@@ -41,6 +43,7 @@ class CoreDataManager {
             callback(nil)
             return
         }
+        
         let model = ProfileModel()
         model.name = user.name
         model.information = user.info
