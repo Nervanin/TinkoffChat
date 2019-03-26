@@ -41,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="User discription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIe-9Y-SNb">
-                                <rect key="frame" x="16" y="404" width="288" height="92"/>
+                                <rect key="frame" x="16" y="406.5" width="288" height="89.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-o1-p6U">
-                                <rect key="frame" x="16" y="366" width="288" height="30"/>
+                                <rect key="frame" x="16" y="366" width="288" height="32.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,21 +82,9 @@
                                     <constraint firstAttribute="height" constant="60" id="Bds-en-6lG"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H5L-bc-Mlc">
-                                <rect key="frame" x="16" y="366" width="288" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="4iO-43-1DQ"/>
-                                    <constraint firstAttribute="height" constant="30" id="pic-ff-nCi"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="H5L-bc-Mlc" firstAttribute="top" secondItem="hMJ-ns-2DM" secondAttribute="bottom" constant="8" id="04P-bx-Mvz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H5L-bc-Mlc" secondAttribute="trailing" constant="16" id="0x3-hT-3aY"/>
                             <constraint firstItem="NUj-o1-p6U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2oA-3d-5lb"/>
                             <constraint firstItem="KIe-9Y-SNb" firstAttribute="top" secondItem="NUj-o1-p6U" secondAttribute="bottom" constant="8" symbolic="YES" id="AMV-iY-hcN"/>
                             <constraint firstItem="3FB-sB-rUQ" firstAttribute="bottom" secondItem="hMJ-ns-2DM" secondAttribute="bottom" id="Eft-tZ-Uyl"/>
@@ -106,8 +94,6 @@
                             <constraint firstItem="KIe-9Y-SNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SEt-uc-X2j"/>
                             <constraint firstItem="hho-Kq-Kr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bOI-nG-rcw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hMJ-ns-2DM" secondAttribute="trailing" constant="16" id="bjs-gx-m3X"/>
-                            <constraint firstItem="H5L-bc-Mlc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eZ9-Vb-Ufv"/>
-                            <constraint firstItem="KIe-9Y-SNb" firstAttribute="top" secondItem="H5L-bc-Mlc" secondAttribute="bottom" constant="8" id="eaE-Hy-9hg"/>
                             <constraint firstItem="NUj-o1-p6U" firstAttribute="top" secondItem="hMJ-ns-2DM" secondAttribute="bottom" constant="8" symbolic="YES" id="edo-DF-ljt"/>
                             <constraint firstItem="NUj-o1-p6U" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="egW-OQ-4CR"/>
                             <constraint firstItem="hho-Kq-Kr0" firstAttribute="top" secondItem="KIe-9Y-SNb" secondAttribute="bottom" constant="8" symbolic="YES" id="h2D-li-6YR"/>
@@ -129,7 +115,6 @@
                     <connections>
                         <outlet property="editingButton" destination="hho-Kq-Kr0" id="g68-cG-RAH"/>
                         <outlet property="setProfileImageButton" destination="3FB-sB-rUQ" id="Pkm-Ol-DVK"/>
-                        <outlet property="setUpUserName" destination="H5L-bc-Mlc" id="2Pc-UM-bwW"/>
                         <outlet property="userDescription" destination="KIe-9Y-SNb" id="IfY-nQ-DH8"/>
                         <outlet property="userImage" destination="hMJ-ns-2DM" id="6c7-ci-dRY"/>
                         <outlet property="userName" destination="NUj-o1-p6U" id="hBR-4Q-KdK"/>

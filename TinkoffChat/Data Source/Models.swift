@@ -10,11 +10,35 @@ import UIKit
 import Foundation
 import MultipeerConnectivity
 
-struct UserProfileModel: Codable {
-    var image: Data? //UIImage(named: "placeholder-user")
-    var name = "Мелешко Константин"
-    var description = "👨‍💻 Пытаюсь кодить под ios \n👨‍🎓 Учусь в Тинькофф ФинТех \n👨‍🏫 Помогаю развиваться другим"
+import UIKit
+
+class User {
+
+    var name: String?
+    var info: String?
+    var image: UIImage?
+
+    //isChanged
+    var nameIsChanged = false
+    var infoIsChanged = false
+    var imageIsChanged = false
+
+    init() {}
+
+    init(with name: String?, info: String?, image: UIImage? ) {
+        self.name = name
+        self.info = info
+        self.image = image
+    }
 }
+
+
+
+//struct UserProfileModel: Codable {
+//    var image = UIImage(named: "placeholder-user")
+//    var name = "Мелешко Константин"
+//    var description = "👨‍💻 Пытаюсь кодить под ios \n👨‍🎓 Учусь в Тинькофф ФинТех \n👨‍🏫 Помогаю развиваться другим"
+//}
 
 class ConversationModel {
     var name: String?
