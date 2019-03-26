@@ -8,51 +8,47 @@
 import UIKit
 import CoreData
 
-class CoreDataManager: NSObject {
-    private static var _coreDataStack: CoreDataStack?
-    public static var coreDataStack: CoreDataStack? {
-        get {
-            if _coreDataStack == nil {
-                _coreDataStack = CoreDataStack()
-            }
-            return _coreDataStack
+import Foundation
+
+class CoreDataManager {
+    
+    private static let stack = CoreDataStack()
+    
+    static func saveProfile(model: ProfileModel, callback: @escaping (_ success: Bool) -> ()) {
+        guard let context = self.stack.saveContext else {
+            callback(false)
+            return
         }
+        let appUser = AppUser.findOrInserAppUser(in: context)
+        if let name = model.name {
+            appUser?.name = name
+        }
+        if let information = model.information {
+            appUser?.info = information
+        }
+        if let image = model.image {
+            appUser?.image = image.fixOrientation().pngData()
+        }
+        self.stack.performSave(context: context, completionHandler: {
+            DispatchQueue.main.async {
+                callback(true)
+            }
+        })
     }
     
-    static func loadProfile(_ completion: @escaping (AppUser?) -> ()){
-        if let mainContext = self.coreDataStack?.mainContext {
-            completion(AppUser.findOrInserAppUser(in: mainContext))
+    static func loadProfile(callback: @escaping (ProfileModel?) -> ()) {
+        guard let context = self.stack.saveContext, let user = AppUser.findOrInserAppUser(in: context) else {
+            callback(nil)
+            return
         }
-        
-        completion(nil)
-    }
-    
-    static func saveProfile(_ user: User, completion: @escaping (Bool) -> ()) {
-        
-        if let saveContext = self.coreDataStack?.saveContext {
-            saveContext.perform {
-                if let profile = AppUser.findOrInserAppUser(in: saveContext) {
-                    
-                    if user.nameIsChanged, let profileName = user.name {
-                        profile.name = profileName
-                    }
-                    
-                    if user.infoIsChanged, let profileDescription = user.info {
-                        profile.info = profileDescription
-                    }
-                    
-//                    if user.imageIsChanged, let profileImage = user.image {
-//                        let imageData = UIImage()//UIImageJPEGRepresentation(profileImage, 1.0)
-//                        profile.image = imageData
-//                    }
-                    
-                    coreDataStack?.performSave(context: saveContext, completionHandler: {
-                        DispatchQueue.main.async {
-                            completion(true)
-                        }
-                    })
-                }
-            }
+        let model = ProfileModel()
+        model.name = user.name
+        model.information = user.info
+        if let img = user.image {
+            model.image = UIImage(data: img)
+        }
+        DispatchQueue.main.async {
+            callback(model)
         }
     }
 }

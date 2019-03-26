@@ -10,11 +10,9 @@
 		5D9C31BF0B842B10DD3431B5 /* Pods_TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6073FE7680D7434BE1FEFA6 /* Pods_TinkoffChat.framework */; };
 		B51C3150221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C314F221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift */; };
 		B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */; };
-		B52A64DD224A4E4800D76675 /* EditingUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A64DC224A4E4800D76675 /* EditingUserProfileViewController.swift */; };
 		B52A64E0224A54F300D76675 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A64DF224A54F300D76675 /* CoreDataStack.swift */; };
 		B52A64E2224A589A00D76675 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A64E1224A589A00D76675 /* CoreDataManager.swift */; };
-		B52A64E4224A592D00D76675 /* UserManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A64E3224A592D00D76675 /* UserManagerProtocol.swift */; };
-		B52A64E6224A6FD200D76675 /* ProfileCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A64E5224A6FD200D76675 /* ProfileCoreData.swift */; };
+		B52A64E8224AA1A100D76675 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A64E7224AA1A100D76675 /* UIImage.swift */; };
 		B52DC436223F10A9007E6E55 /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DC435223F10A9007E6E55 /* MultipeerCommunicator.swift */; };
 		B52DC438223F10C7007E6E55 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DC437223F10C7007E6E55 /* Communicator.swift */; };
 		B52DC43A223F11D5007E6E55 /* CommunicatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DC439223F11D5007E6E55 /* CommunicatorDelegate.swift */; };
@@ -60,11 +58,9 @@
 		6553760C1E52A43529F6B398 /* Pods-TinkoffChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.debug.xcconfig"; sourceTree = "<group>"; };
 		B51C314F221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerLogicForUserProfileImage.swift; sourceTree = "<group>"; };
 		B5299F90221EB185009A4345 /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
-		B52A64DC224A4E4800D76675 /* EditingUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingUserProfileViewController.swift; sourceTree = "<group>"; };
 		B52A64DF224A54F300D76675 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B52A64E1224A589A00D76675 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		B52A64E3224A592D00D76675 /* UserManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerProtocol.swift; sourceTree = "<group>"; };
-		B52A64E5224A6FD200D76675 /* ProfileCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoreData.swift; sourceTree = "<group>"; };
+		B52A64E7224AA1A100D76675 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		B52DC435223F10A9007E6E55 /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
 		B52DC437223F10C7007E6E55 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 		B52DC439223F11D5007E6E55 /* CommunicatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicatorDelegate.swift; sourceTree = "<group>"; };
@@ -197,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */,
-				B52A64DC224A4E4800D76675 /* EditingUserProfileViewController.swift */,
 				B5ECE57E22182573005AD783 /* ZoomUserImageViewController.swift */,
 			);
 			path = Profile;
@@ -222,7 +217,6 @@
 				B5EE355522385ABD006FF10B /* DataSourceProtocol.swift */,
 				B5EE35612239376C006FF10B /* DataSourceType.swift */,
 				B53E5B1022408BF60065FA47 /* CheckOnlineUsersProtocol.swift */,
-				B52A64E3224A592D00D76675 /* UserManagerProtocol.swift */,
 				B53E5B0D22408A220065FA47 /* CommunicatorProtocols */,
 			);
 			path = Protocols;
@@ -243,7 +237,7 @@
 			children = (
 				B5A8175E221A7A9200A05D3B /* ProfilePickerImageExtesion.swift */,
 				B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */,
-				B52A64E5224A6FD200D76675 /* ProfileCoreData.swift */,
+				B52A64E7224AA1A100D76675 /* UIImage.swift */,
 			);
 			path = "Profile Extension";
 			sourceTree = "<group>";
@@ -462,7 +456,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52A64E6224A6FD200D76675 /* ProfileCoreData.swift in Sources */,
 				B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */,
 				B52DC43A223F11D5007E6E55 /* CommunicatorDelegate.swift in Sources */,
 				B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */,
@@ -482,17 +475,16 @@
 				B565D5DE2222EB1700CE4204 /* ConversationsListViewController.swift in Sources */,
 				B53790A6222F114C007FAC24 /* ThemesSettings.swift in Sources */,
 				B53E5B0F22408AAA0065FA47 /* MultipeerCommunicatorManager.swift in Sources */,
-				B52A64E4224A592D00D76675 /* UserManagerProtocol.swift in Sources */,
 				B537909B222DF06E007FAC24 /* Themes.m in Sources */,
 				B53E5B1122408BF60065FA47 /* CheckOnlineUsersProtocol.swift in Sources */,
 				B530C2E72222F75000DC7A1C /* ConversationViewController.swift in Sources */,
 				B53E5B1322414D680065FA47 /* ConversationManager.swift in Sources */,
 				B5B8048222304DF400021038 /* SwiftThemeViewController.swift in Sources */,
 				B5977E1C2230007C00F7238A /* ThemesViewController.m in Sources */,
+				B52A64E8224AA1A100D76675 /* UIImage.swift in Sources */,
 				B5EE355E22387BC0006FF10B /* OperationAsync.swift in Sources */,
 				B53E5B0C22408A170065FA47 /* CommunicatorManagerProtocol.swift in Sources */,
 				B52A64E0224A54F300D76675 /* CoreDataStack.swift in Sources */,
-				B52A64DD224A4E4800D76675 /* EditingUserProfileViewController.swift in Sources */,
 				B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */,
 				B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */,
 				B5EE355A22387B51006FF10B /* OperationSave.swift in Sources */,

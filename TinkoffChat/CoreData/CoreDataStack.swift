@@ -79,7 +79,6 @@ class CoreDataStack: NSObject {
         get {
             if _mainContext == nil {
                 let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
-                // context.mergePolicy = NSOverwriteMergePolicy
                 guard let parentContext = masterContext else {
                     print("No master context!")
                     return nil
@@ -175,7 +174,7 @@ extension AppUser {
     }
     
     static func fetchRequestAppUser(model: NSManagedObjectModel) -> NSFetchRequest<AppUser>? {
-        let templateName = "AppUserRequest"
+        let templateName = "AppUser"
         guard let fetchRequest = model.fetchRequestTemplate(forName: templateName) as? NSFetchRequest<AppUser> else {
             assert(false, "No tamplate with name \(templateName)!")
             return nil

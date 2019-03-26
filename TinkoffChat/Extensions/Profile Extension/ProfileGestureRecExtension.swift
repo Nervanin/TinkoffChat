@@ -17,7 +17,6 @@ extension ProfileViewController: UIGestureRecognizerDelegate {
     }
     
     @objc func imageLongPressed(tapGestureRecognizer: UILongPressGestureRecognizer) {
-        chooseSourceForImageAlert()
     }
     
     @objc func imageOneTapped(tapGestureRecognizer: UITapGestureRecognizer) {

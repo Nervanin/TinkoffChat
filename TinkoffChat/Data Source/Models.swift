@@ -12,33 +12,13 @@ import MultipeerConnectivity
 
 import UIKit
 
-class User {
-
+class ProfileModel {
+    
     var name: String?
-    var info: String?
+    var information: String?
     var image: UIImage?
-
-    //isChanged
-    var nameIsChanged = false
-    var infoIsChanged = false
-    var imageIsChanged = false
-
-    init() {}
-
-    init(with name: String?, info: String?, image: UIImage? ) {
-        self.name = name
-        self.info = info
-        self.image = image
-    }
+    var previousImageData: Data?
 }
-
-
-
-//struct UserProfileModel: Codable {
-//    var image = UIImage(named: "placeholder-user")
-//    var name = "Мелешко Константин"
-//    var description = "👨‍💻 Пытаюсь кодить под ios \n👨‍🎓 Учусь в Тинькофф ФинТех \n👨‍🏫 Помогаю развиваться другим"
-//}
 
 class ConversationModel {
     var name: String?
