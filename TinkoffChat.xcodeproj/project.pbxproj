@@ -38,6 +38,7 @@
 		B5A81761221A7B5000A05D3B /* ProfileGestureRecExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */; };
 		B5B8048222304DF400021038 /* SwiftThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */; };
 		B5CFCBE8221A8B84005C1134 /* SetUserProfileImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFCBE7221A8B84005C1134 /* SetUserProfileImageProtocol.swift */; };
+		B5D2C57B2253BFA1008EE8F2 /* FetchRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2C57A2253BFA1008EE8F2 /* FetchRequestManager.swift */; };
 		B5D93B94220B6EC700B12EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */; };
 		B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */; };
 		B5D93B99220B6EC700B12EA4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D93B97220B6EC700B12EA4 /* Profile.storyboard */; };
@@ -90,6 +91,7 @@
 		B5A8175E221A7A9200A05D3B /* ProfilePickerImageExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePickerImageExtesion.swift; sourceTree = "<group>"; };
 		B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGestureRecExtension.swift; sourceTree = "<group>"; };
 		B5CFCBE7221A8B84005C1134 /* SetUserProfileImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserProfileImageProtocol.swift; sourceTree = "<group>"; };
+		B5D2C57A2253BFA1008EE8F2 /* FetchRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestManager.swift; sourceTree = "<group>"; };
 		B5D93B90220B6EC700B12EA4 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D93B93220B6EC700B12EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D93B95220B6EC700B12EA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				B52A64DF224A54F300D76675 /* CoreDataStack.swift */,
 				B52A64E1224A589A00D76675 /* CoreDataManager.swift */,
+				B5D2C57A2253BFA1008EE8F2 /* FetchRequestManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D2C57B2253BFA1008EE8F2 /* FetchRequestManager.swift in Sources */,
 				B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */,
 				B52DC43A223F11D5007E6E55 /* CommunicatorDelegate.swift in Sources */,
 				B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */,
