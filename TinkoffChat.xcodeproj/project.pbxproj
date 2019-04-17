@@ -34,6 +34,9 @@
 		B5977E1C2230007C00F7238A /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5379096222DF026007FAC24 /* ThemesViewController.m */; };
 		B599F8812224028100439B7A /* MessageCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599F8802224028100439B7A /* MessageCellConfiguration.swift */; };
 		B599F8842224048400439B7A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599F8832224048400439B7A /* MessageTableViewCell.swift */; };
+		B5A3E255226761EE00A7377A /* DownloadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A3E254226761EE00A7377A /* DownloadImageViewController.swift */; };
+		B5A3E2572267632600A7377A /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A3E2562267632600A7377A /* ImageStorage.swift */; };
+		B5A3E2592267633B00A7377A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A3E2582267633B00A7377A /* CollectionViewCell.swift */; };
 		B5A8175F221A7A9200A05D3B /* ProfilePickerImageExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8175E221A7A9200A05D3B /* ProfilePickerImageExtesion.swift */; };
 		B5A81761221A7B5000A05D3B /* ProfileGestureRecExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */; };
 		B5B8048222304DF400021038 /* SwiftThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53790A3222F0EB6007FAC24 /* SwiftThemeViewController.swift */; };
@@ -88,6 +91,9 @@
 		B58B3641221DF66500DDE309 /* ConversationsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConversationsList.storyboard; sourceTree = "<group>"; };
 		B599F8802224028100439B7A /* MessageCellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellConfiguration.swift; sourceTree = "<group>"; };
 		B599F8832224048400439B7A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		B5A3E254226761EE00A7377A /* DownloadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageViewController.swift; sourceTree = "<group>"; };
+		B5A3E2562267632600A7377A /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
+		B5A3E2582267633B00A7377A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B5A8175E221A7A9200A05D3B /* ProfilePickerImageExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePickerImageExtesion.swift; sourceTree = "<group>"; };
 		B5A81760221A7B5000A05D3B /* ProfileGestureRecExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGestureRecExtension.swift; sourceTree = "<group>"; };
 		B5CFCBE7221A8B84005C1134 /* SetUserProfileImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserProfileImageProtocol.swift; sourceTree = "<group>"; };
@@ -131,6 +137,16 @@
 				D13F12F1225E29503664F6AA /* Pods-TinkoffChat.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B50801AA226650A1006C5F43 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B5A3E254226761EE00A7377A /* DownloadImageViewController.swift */,
+				B5A3E2562267632600A7377A /* ImageStorage.swift */,
+				B5A3E2582267633B00A7377A /* CollectionViewCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		B52A64DE224A54E100D76675 /* CoreData */ = {
@@ -270,6 +286,7 @@
 		B5D93B87220B6EC700B12EA4 = {
 			isa = PBXGroup;
 			children = (
+				B50801AA226650A1006C5F43 /* CollectionView */,
 				B5D93B92220B6EC700B12EA4 /* TinkoffChat */,
 				B5D93B91220B6EC700B12EA4 /* Products */,
 				72BD5C7ADEE4FA80B7DB6C86 /* Pods */,
@@ -460,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D2C57B2253BFA1008EE8F2 /* FetchRequestManager.swift in Sources */,
+				B5A3E2572267632600A7377A /* ImageStorage.swift in Sources */,
 				B5D93B96220B6EC700B12EA4 /* ProfileViewController.swift in Sources */,
 				B52DC43A223F11D5007E6E55 /* CommunicatorDelegate.swift in Sources */,
 				B565D5DC2222EAE000CE4204 /* DateExtension.swift in Sources */,
@@ -472,6 +490,7 @@
 				B53790AE222F4C9D007FAC24 /* ColorExtension.swift in Sources */,
 				B53790A2222F0DC7007FAC24 /* NSUserDefaultsExtension.swift in Sources */,
 				B599F8842224048400439B7A /* MessageTableViewCell.swift in Sources */,
+				B5A3E255226761EE00A7377A /* DownloadImageViewController.swift in Sources */,
 				B5CFCBE8221A8B84005C1134 /* SetUserProfileImageProtocol.swift in Sources */,
 				B5A8175F221A7A9200A05D3B /* ProfilePickerImageExtesion.swift in Sources */,
 				B5D93B94220B6EC700B12EA4 /* AppDelegate.swift in Sources */,
@@ -493,6 +512,7 @@
 				B5299F91221EB185009A4345 /* ConversationCellConfiguration.swift in Sources */,
 				B5EE355A22387B51006FF10B /* OperationSave.swift in Sources */,
 				B5D93B9C220B6EC700B12EA4 /* TinkoffChat.xcdatamodeld in Sources */,
+				B5A3E2592267633B00A7377A /* CollectionViewCell.swift in Sources */,
 				B52A64E2224A589A00D76675 /* CoreDataManager.swift in Sources */,
 				B5EE35622239376C006FF10B /* DataSourceType.swift in Sources */,
 				B51C3150221AC4CF00A6381E /* GestureRecognizerLogicForUserProfileImage.swift in Sources */,

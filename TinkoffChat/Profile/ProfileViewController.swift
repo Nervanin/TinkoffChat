@@ -47,8 +47,22 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
                 self.present(noCameraAlert, animated: true)
             }
         }))
+        choosePhotoAlert.addAction(UIAlertAction(title: "Загрузить", style: .default, handler: { (alertAction) in
+       //     let downLoadImageViewController = DownLoadImageViewController()
+            self.performSegue(withIdentifier: "downLoadImage", sender: nil)
+        }))
         choosePhotoAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
         self.present(choosePhotoAlert, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "downLoadImage" {
+            print("segue to image menu")
+        }
+    }
+    
+    @IBAction func unwindToProfile (segue: UIStoryboardSegue) {
+        print("Unwind segue")
     }
     
     @IBAction func editProfileInformation(_ sender: UIButton) {

@@ -45,7 +45,7 @@ class CoreDataStack: NSObject {
                                                                         at: self.storeURL,
                                                                         options: nil)
                 } catch {
-                    assert(false, "Error adding persistent store to coordinator: \(error)")
+                 //   assert(false, "Error adding persistent store to coordinator: \(error)")
                 }
             }
             

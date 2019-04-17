@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vgS-Q3-2C4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="vgS-Q3-2C4">
                                 <rect key="frame" x="16" y="124" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vgS-Q3-2C4" secondAttribute="height" multiplier="1:1" id="t7e-ck-LNo"/>
@@ -261,15 +261,98 @@
                         <outlet property="saveButton" destination="SV9-hM-viH" id="mIO-jO-WLz"/>
                         <outlet property="saveButtonConstraint" destination="fKv-jS-DR4" id="wIE-L1-kJ1"/>
                         <outlet property="userImage" destination="vgS-Q3-2C4" id="LXU-XA-sSW"/>
+                        <segue destination="0f1-bb-epw" kind="show" identifier="downLoadImage" id="XNo-4z-jgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJH-fE-03f" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232.5" y="130.98591549295776"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="heh-4t-49p">
+            <objects>
+                <navigationController id="0f1-bb-epw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="70c-ek-4r6">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wo7-OF-7fc" kind="relationship" relationship="rootViewController" id="T5N-CH-9b8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCJ-tK-Nvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="131"/>
+        </scene>
+        <!--Down Load Image View Controller-->
+        <scene sceneID="PBi-x1-5fF">
+            <objects>
+                <collectionViewController id="wo7-OF-7fc" customClass="DownLoadImageViewController" customModule="TinkoffChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nlN-zr-cLD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WWg-LY-swA">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="PU5-o5-liv">
+                            <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="0.32634671129999998" green="1" blue="0.96472833950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </activityIndicatorView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="4fM-OE-QTW" customClass="CollectionViewCell" customModule="TinkoffChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="heZ-NU-aLg">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="heZ-NU-aLg" firstAttribute="leading" secondItem="4fM-OE-QTW" secondAttribute="leading" id="G9L-Q4-TQ9"/>
+                                    <constraint firstItem="heZ-NU-aLg" firstAttribute="top" secondItem="4fM-OE-QTW" secondAttribute="top" id="cME-Eq-bqK"/>
+                                    <constraint firstAttribute="trailing" secondItem="heZ-NU-aLg" secondAttribute="trailing" id="fhy-hC-09i"/>
+                                    <constraint firstAttribute="bottom" secondItem="heZ-NU-aLg" secondAttribute="bottom" id="jZ0-Ld-ohz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="heZ-NU-aLg" id="RXH-a4-8n7"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="wo7-OF-7fc" id="2ln-M8-Tdh"/>
+                            <outlet property="delegate" destination="wo7-OF-7fc" id="A8l-u9-JT1"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="3ox-ft-VyD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PAq-BB-E4v">
+                            <connections>
+                                <action selector="cancelBtnWasPressed:" destination="wo7-OF-7fc" id="3NY-BL-mdX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="spinner" destination="PU5-o5-liv" id="F4O-Fe-or3"/>
+                        <segue destination="HrP-IW-PTe" kind="unwind" identifier="unwindProfile" unwindAction="unwindToProfileWithSegue:" id="MyK-gu-odk"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qug-jL-ZNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HrP-IW-PTe" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1869" y="131"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ChoosePhotoIcon" width="16" height="16"/>
+        <image name="placeholder-user" width="600" height="600"/>
         <image name="slr-camera-2-xxl" width="256" height="256"/>
     </resources>
 </document>
